@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 48" fill="none">
+  <!-- Logomark (scaled to 48px) -->
+  <g transform="translate(0, 0) scale(0.75)">
+    <circle cx="32" cy="32" r="30" fill="#1a1a1a"/>
+    <circle cx="32" cy="32" r="30" stroke="#ffffff" stroke-width="1.5" stroke-opacity="0.3"/>
+    <path d="M29 38 L32 46 L35 38 Z" fill="#ffffff"/>
+    <path d="M32 39 L34 41 L32 43 L30 41 Z" fill="#1a1a1a" stroke="#ffffff" stroke-width="0.5" stroke-opacity="0.6"/>
+    <path d="M27 38 L29 36 L35 36 L37 38 Z" fill="#ffffff"/>
+    <path d="M32 14 C26 22 24 28 27 34 L29 36 L35 36 L37 34 C40 28 38 22 32 14 Z" fill="#ffffff" fill-opacity="0.4"/>
+    <path d="M32 18 C28 24 27 28 29 33 L32 36 L35 33 C37 28 36 24 32 18 Z" fill="#ffffff" fill-opacity="0.7"/>
+    <path d="M32 22 C30 26 29.5 29 31 33 L32 35 L33 33 C34.5 29 34 26 32 22 Z" fill="#ffffff"/>
+  </g>
+  <!-- Wordmark -->
+  <text x="60" y="33" font-family="Inter, system-ui, sans-serif" font-size="24" font-weight="700" letter-spacing="-0.02em" fill="#ffffff">OLYMPIA</text>
+</svg>

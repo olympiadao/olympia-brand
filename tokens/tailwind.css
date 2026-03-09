@@ -1,0 +1,71 @@
+/**
+ * Olympia Brand — Tailwind CSS 4 Theme
+ *
+ * Usage in your project's globals.css:
+ *
+ *   @import "tailwindcss";
+ *
+ *   @theme inline {
+ *     --color-brand-green: #00ffae;
+ *     --color-brand-green-hover: #14f1b4;
+ *     --color-brand-green-active: #00cc8a;
+ *     --color-brand-green-subtle: rgba(0, 255, 174, 0.08);
+ *     --color-brand-green-glow: rgba(0, 255, 174, 0.4);
+ *     --color-brand-amber: #F59E0B;
+ *
+ *     --color-background: var(--background);
+ *     --color-foreground: var(--foreground);
+ *
+ *     --font-sans: var(--font-inter);
+ *     --font-mono: var(--font-jetbrains-mono);
+ *   }
+ *
+ * Then use in templates:
+ *   <div class="bg-brand-green text-background">
+ *   <button class="hover:bg-brand-green-hover">
+ *   <code class="font-mono">0xCfE1...</code>
+ */
+
+/* Dark mode (default) */
+:root {
+  --background: #0a0f10;
+  --foreground: #ffffff;
+  --green-primary: #00ffae;
+  --green-glow: rgba(0, 255, 174, 0.4);
+}
+
+/* Light mode */
+:root[data-theme="light"],
+.light {
+  --background: #fafafa;
+  --foreground: #1c1917;
+  --green-primary: #059669;
+  --green-glow: rgba(5, 150, 105, 0.2);
+}
+
+/* Card utility */
+.olympia-card {
+  background: var(--card-bg, rgba(0, 0, 0, 0.35));
+  border: 1px solid var(--card-border, #1f292b);
+  border-radius: 14px;
+  box-shadow: var(--card-shadow, 0 10px 26px rgba(0, 0, 0, 0.45));
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.olympia-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--brand-green, #00ffae);
+  box-shadow: var(--card-hover-shadow, 0 14px 32px rgba(0, 0, 0, 0.55));
+}
+
+/* Focus ring */
+:focus-visible {
+  outline: 2px solid var(--green-primary);
+  outline-offset: 2px;
+}
+
+/* Selection */
+::selection {
+  background: var(--green-glow);
+  color: white;
+}

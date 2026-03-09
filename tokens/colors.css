@@ -1,0 +1,105 @@
+/**
+ * Olympia Brand Colors
+ * Design tokens as CSS custom properties
+ *
+ * Usage:
+ *   @import url('path/to/colors.css');
+ *   background: var(--brand-green);
+ */
+
+/* ==========================================
+   Dark Mode (Default)
+   ========================================== */
+
+:root {
+  /* Primary Brand */
+  --brand-green: #00ffae;
+  --brand-green-hover: #14f1b4;
+  --brand-green-active: #00cc8a;
+  --brand-green-muted: #007a53;
+  --brand-green-subtle: rgba(0, 255, 174, 0.08);
+  --brand-green-glow: rgba(0, 255, 174, 0.4);
+
+  /* Secondary (Amber — for treasury/financial data) */
+  --brand-amber: #F59E0B;
+  --brand-amber-hover: #D97706;
+  --brand-amber-subtle: rgba(245, 158, 11, 0.08);
+
+  /* Backgrounds */
+  --bg-primary: #0a0f10;
+  --bg-surface: #0f1614;
+  --bg-elevated: #162420;
+  --bg-overlay: rgba(10, 15, 16, 0.85);
+  --bg-card: rgba(0, 0, 0, 0.35);
+
+  /* Text */
+  --text-primary: #ffffff;
+  --text-secondary: #c3c5cb;
+  --text-muted: #9ca3af;
+  --text-subtle: #6b7280;
+  --text-disabled: #374151;
+
+  /* Borders */
+  --border-default: #1f292b;
+  --border-subtle: rgba(255, 255, 255, 0.04);
+  --border-strong: rgba(255, 255, 255, 0.16);
+  --border-brand: rgba(0, 255, 174, 0.3);
+
+  /* Semantic */
+  --color-success: #00ffae;
+  --color-error: #ef4444;
+  --color-warning: #F59E0B;
+  --color-info: #38bdf8;
+
+  /* Card Effect */
+  --card-bg: rgba(0, 0, 0, 0.35);
+  --card-border: #1f292b;
+  --card-shadow: 0 10px 26px rgba(0, 0, 0, 0.45);
+  --card-hover-shadow: 0 14px 32px rgba(0, 0, 0, 0.55);
+}
+
+/* ==========================================
+   Light Mode
+   ========================================== */
+
+:root[data-theme="light"],
+.light {
+  /* Primary Brand (darker for legibility) */
+  --brand-green: #059669;
+  --brand-green-hover: #047857;
+  --brand-green-active: #065f46;
+  --brand-green-muted: #a7f3d0;
+  --brand-green-subtle: rgba(5, 150, 105, 0.06);
+  --brand-green-glow: rgba(5, 150, 105, 0.2);
+
+  /* Secondary */
+  --brand-amber: #D97706;
+  --brand-amber-hover: #B45309;
+  --brand-amber-subtle: rgba(217, 119, 6, 0.06);
+
+  /* Backgrounds */
+  --bg-primary: #fafafa;
+  --bg-surface: #f5f5f4;
+  --bg-elevated: #e7e5e4;
+  --bg-overlay: rgba(255, 255, 255, 0.85);
+  --bg-card: #ffffff;
+
+  /* Text */
+  --text-primary: #1c1917;
+  --text-secondary: #57534e;
+  --text-muted: #78716c;
+  --text-subtle: #a8a29e;
+  --text-disabled: #d6d3d1;
+
+  /* Borders */
+  --border-default: #e7e5e4;
+  --border-subtle: rgba(0, 0, 0, 0.04);
+  --border-strong: rgba(0, 0, 0, 0.16);
+  --border-brand: rgba(5, 150, 105, 0.3);
+
+  /* Card Effect */
+  --card-bg: #ffffff;
+  --card-border: #e7e5e4;
+  --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --card-hover-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}

@@ -31,7 +31,7 @@
   <text x="600" y="310" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="24" font-weight="400" fill="#9ca3af">On-Chain Protocol Funding for Ethereum Classic</text>
   <!-- Treasury address -->
   <rect x="310" y="350" width="580" height="48" rx="8" fill="rgba(0, 255, 174, 0.06)" stroke="#00ffae" stroke-opacity="0.2"/>
-  <text x="600" y="381" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="16" font-weight="400" fill="#00ffae">0xCfE1e0ECbff745e6c800fF980178a8dDEf94bEe2</text>
+  <text x="600" y="381" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="16" font-weight="400" fill="#00ffae">0xd6165F3aF4281037bce810621F62B43077Fb0e37</text>
   <!-- Descriptor -->
   <text x="600" y="445" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="500" fill="#9ca3af">ECIP-1112 · Immutable Vault · OpenZeppelin v5.6</text>
   <!-- Bottom border accent -->

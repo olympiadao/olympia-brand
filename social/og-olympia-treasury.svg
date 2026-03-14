@@ -1,0 +1,100 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="bgGlow" cx="20%" cy="30%" r="80%">
+      <stop offset="0%" stop-color="#162820"/>
+      <stop offset="100%" stop-color="#0e1614"/>
+    </radialGradient>
+    <radialGradient id="bgGlow2" cx="85%" cy="70%" r="50%">
+      <stop offset="0%" stop-color="#122018" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#0e1614" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="btnGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00ffae"/>
+      <stop offset="100%" stop-color="#00cc8a"/>
+    </linearGradient>
+    <radialGradient id="logoGlow" cx="50%" cy="42%" r="45%">
+      <stop offset="0%" stop-color="#00ffae" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#00ffae" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="flameGrad" x1="50%" y1="100%" x2="50%" y2="0%">
+      <stop offset="0%" stop-color="#00ffae"/>
+      <stop offset="40%" stop-color="#00ffae"/>
+      <stop offset="100%" stop-color="#b0ffe0"/>
+    </linearGradient>
+    <linearGradient id="flameInner" x1="50%" y1="100%" x2="50%" y2="0%">
+      <stop offset="0%" stop-color="#00ffae"/>
+      <stop offset="100%" stop-color="#d0fff0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background layers -->
+  <rect width="1200" height="630" fill="#0e1614"/>
+  <rect width="1200" height="630" fill="url(#bgGlow)"/>
+  <rect width="1200" height="630" fill="url(#bgGlow2)"/>
+
+  <!-- Circuit-trace corner accents (primary) -->
+  <path d="M0 100 L0 0 L100 0" fill="none" stroke="#00ffae" stroke-width="1.5" stroke-opacity="0.25"/>
+  <path d="M0 100 Q0 50 50 50 L160 50" fill="none" stroke="#00ffae" stroke-width="1" stroke-opacity="0.15"/>
+  <path d="M1100 0 L1200 0 L1200 100" fill="none" stroke="#00ffae" stroke-width="1.5" stroke-opacity="0.25"/>
+  <path d="M1040 50 L1150 50 Q1200 50 1200 100" fill="none" stroke="#00ffae" stroke-width="1" stroke-opacity="0.15"/>
+  <path d="M0 530 L0 630 L100 630" fill="none" stroke="#00ffae" stroke-width="1.5" stroke-opacity="0.18"/>
+  <path d="M1100 630 L1200 630 L1200 530" fill="none" stroke="#00ffae" stroke-width="1.5" stroke-opacity="0.18"/>
+
+  <!-- Additional circuit traces for depth -->
+  <path d="M0 200 L0 160 L40 160" fill="none" stroke="#00ffae" stroke-width="1" stroke-opacity="0.1"/>
+  <path d="M1200 200 L1200 160 L1160 160" fill="none" stroke="#00ffae" stroke-width="1" stroke-opacity="0.1"/>
+  <path d="M60 0 L60 30 Q60 50 80 50" fill="none" stroke="#00ffae" stroke-width="0.75" stroke-opacity="0.09"/>
+  <path d="M1140 0 L1140 30 Q1140 50 1120 50" fill="none" stroke="#00ffae" stroke-width="0.75" stroke-opacity="0.09"/>
+  <path d="M0 400 L30 400 Q50 400 50 420 L50 460" fill="none" stroke="#00ffae" stroke-width="0.75" stroke-opacity="0.08"/>
+  <path d="M1200 400 L1170 400 Q1150 400 1150 420 L1150 460" fill="none" stroke="#00ffae" stroke-width="0.75" stroke-opacity="0.08"/>
+  <line x1="160" y1="50" x2="260" y2="50" stroke="#00ffae" stroke-width="0.5" stroke-opacity="0.07"/>
+  <line x1="940" y1="50" x2="1040" y2="50" stroke="#00ffae" stroke-width="0.5" stroke-opacity="0.07"/>
+  <path d="M1100 530 L1100 580 Q1100 600 1080 600 L1020 600" fill="none" stroke="#00ffae" stroke-width="0.75" stroke-opacity="0.08"/>
+  <path d="M100 630 L100 600 Q100 580 120 580 L180 580" fill="none" stroke="#00ffae" stroke-width="0.75" stroke-opacity="0.08"/>
+
+  <!-- Horizontal accent lines -->
+  <line x1="100" y1="330" x2="500" y2="330" stroke="#00ffae" stroke-width="1" stroke-opacity="0.12"/>
+  <line x1="700" y1="500" x2="1100" y2="500" stroke="#00ffae" stroke-width="0.5" stroke-opacity="0.07"/>
+
+  <!-- Logo container with torch -->
+  <g transform="translate(100, 125)">
+    <rect x="0" y="0" width="130" height="130" rx="20" fill="#132a1e" stroke="#00ffae" stroke-width="1.5" stroke-opacity="0.35"/>
+    <g transform="translate(15, 8) scale(0.195)">
+      <ellipse cx="256" cy="230" rx="140" ry="170" fill="url(#logoGlow)"/>
+      <path d="M 256 80 C 248 95, 230 115, 225 135 C 218 160, 210 170, 200 175 C 190 182, 195 165, 200 148 C 195 158, 185 175, 185 190 C 185 205, 195 218, 200 225 C 205 232, 210 238, 215 245 L 215 250 L 297 250 L 297 245 C 302 238, 306 232, 310 222 C 318 208, 322 190, 316 172 C 312 158, 300 140, 295 128 C 290 115, 285 108, 282 100 C 278 90, 268 82, 256 80 Z" fill="url(#flameGrad)" fill-opacity="0.45"/>
+      <path d="M 256 95 C 250 108, 240 125, 234 142 C 228 162, 222 178, 220 192 C 218 206, 222 220, 228 232 C 232 238, 236 244, 240 250 L 272 250 C 276 244, 280 238, 284 230 C 290 218, 294 205, 292 188 C 290 172, 282 155, 275 140 C 270 128, 264 112, 256 95 Z" fill="url(#flameGrad)" fill-opacity="0.65"/>
+      <path d="M 240 115 C 232 130, 218 148, 212 158 C 205 170, 208 155, 215 140 C 220 128, 232 112, 240 100 Z" fill="#b0ffe0" fill-opacity="0.3"/>
+      <path d="M 268 108 C 278 125, 295 145, 300 160 C 305 172, 300 162, 290 148 C 280 135, 272 118, 268 108 Z" fill="#b0ffe0" fill-opacity="0.2"/>
+      <path d="M 256 115 C 252 130, 245 150, 242 170 C 240 188, 242 205, 246 220 C 248 228, 250 240, 252 250 L 260 250 C 262 240, 264 228, 266 220 C 270 205, 272 188, 270 170 C 268 150, 262 132, 256 115 Z" fill="url(#flameInner)" fill-opacity="0.85"/>
+      <path d="M 256 90 C 253 100, 250 115, 249 130 C 248 142, 250 138, 253 125 C 255 115, 257 105, 256 90 Z" fill="#e0fff4" fill-opacity="0.5"/>
+      <path d="M 210 250 C 210 248, 212 246, 218 246 L 294 246 C 300 246, 302 248, 302 250 L 298 262 C 296 266, 290 268, 284 268 L 228 268 C 222 268, 216 266, 214 262 Z" fill="#00ffae"/>
+      <path d="M 232 268 L 230 380 C 230 386, 234 390, 240 392 L 272 392 C 278 390, 282 386, 282 380 L 280 268 Z" fill="#00ffae" fill-opacity="0.9"/>
+      <g transform="translate(234.2, 300) scale(0.085)">
+        <g transform="translate(0,512) scale(0.1,-0.1)" fill="#0f1a14" stroke="none">
+          <path d="M2551 5071 c-6 -11 -125 -193 -263 -403 -138 -211 -340 -518 -448 -683 -108 -165 -321 -490 -474 -723 -153 -233 -276 -425 -274 -427 1 -1 154 61 338 139 884 374 1126 476 1137 476 7 0 330 -142 719 -316 388 -173 708 -314 710 -312 3 3 -1417 2253 -1430 2266 -3 2 -9 -6 -15 -17z"/>
+          <path d="M2485 3110 c-376 -157 -1450 -612 -1452 -614 -2 -2 99 -60 224 -130 126 -69 473 -263 773 -430 l545 -303 40 23 c22 12 357 200 745 418 387 217 706 399 708 405 2 6 -1 11 -7 11 -10 0 -175 73 -1036 457 -203 91 -388 173 -410 183 l-41 18 -89 -38z"/>
+          <path d="M1119 2083 c16 -21 308 -427 648 -903 341 -476 661 -923 712 -994 51 -70 95 -135 98 -143 4 -10 10 -6 23 15 10 16 145 206 301 423 155 217 378 527 494 689 116 162 316 441 444 619 206 287 253 359 209 324 -7 -6 -343 -198 -746 -427 l-732 -417 -128 74 c-1304 758 -1336 777 -1346 777 -4 0 6 -17 23 -37z"/>
+        </g>
+      </g>
+      <path d="M 240 390 L 256 405 L 272 390 Z" fill="#00ffae" fill-opacity="0.7"/>
+    </g>
+  </g>
+
+  <!-- Title -->
+  <text x="260" y="170" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="56" font-weight="700" letter-spacing="-0.02em" fill="#ffffff">Olympia Treasury</text>
+
+  <!-- Subtitle -->
+  <text x="260" y="220" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="24" font-weight="400" fill="#9ca3af">Ethereum Classic's Long-Term Sustainability Fund</text>
+
+  <!-- Categories -->
+  <text x="260" y="270" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="18" font-weight="400" fill="#00ffae" fill-opacity="0.7">Developer Retention · Infrastructure Maintenance · Emergency Response · Independence</text>
+
+  <!-- Footer: CTA left, URL right -->
+  <g transform="translate(100, 350)">
+    <rect x="0" y="0" width="220" height="52" rx="26" fill="url(#btnGrad)"/>
+    <text x="110" y="35" text-anchor="middle" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="18" font-weight="600" fill="#0a0f10">View the Vault</text>
+  </g>
+  <text x="100" y="450" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="18" font-weight="400" fill="#6b7280">Ethereum Classic's protocol-funded ecosystem reserve.</text>
+  <text x="1075" y="575" text-anchor="end" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="18" font-weight="400" fill="#00ffae" fill-opacity="0.7">olympiatreasury.org</text>
+  <rect x="0" y="625" width="1200" height="5" fill="#00ffae" opacity="0.6"/>
+</svg>

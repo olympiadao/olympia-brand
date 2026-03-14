@@ -81,8 +81,10 @@ olympia-brand/
 │   ├── android-chrome-{192,512}x{192,512}.png
 │   └── site.webmanifest
 ├── social/
-│   ├── og-olympiadao.svg / .png    # 1200×630 OG image
-│   └── og-olympiatreasury.svg / .png
+│   ├── og-olympiadao.svg / .png    # 1200×630 OG image (green)
+│   ├── og-olympiatreasury.svg / .png  # Treasury variant (amber)
+│   ├── og-olympia-app.svg / .png   # Governance app (green + Demo badge)
+│   └── og-olympia-futarchy.svg / .png # Futarchy DAO (violet)
 └── tokens/
     ├── colors.css                  # CSS custom properties (dark + light)
     ├── colors.json                 # Machine-readable tokens
@@ -134,6 +136,20 @@ convert -background none social/og-olympiadao.svg -resize 1200x630 social/og-oly
 
 ---
 
+## Legal Entity
+
+| Field | Value |
+|-------|-------|
+| **Entity** | Ethereum Classic DAO LLC |
+| **Type** | LLC — Domestic (Wyoming DAO) |
+| **Filing ID** | 2025-001671865 |
+| **Status** | Active / Current |
+| **Address** | 30 N Gould St Ste R, Sheridan, WY 82801 |
+
+**Copyright format:** `© 2025 Ethereum Classic DAO LLC. All rights reserved.`
+
+---
+
 ## Copyright
 
-Copyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
+© 2025 Ethereum Classic DAO LLC. All rights reserved.

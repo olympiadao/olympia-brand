@@ -50,17 +50,17 @@
   <text x="260" y="170" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="56" font-weight="700" letter-spacing="-0.02em" fill="#ffffff">Olympia DAO</text>
 
   <!-- Subtitle -->
-  <text x="260" y="220" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="24" font-weight="400" fill="#9ca3af">Long-Term Stability for Ethereum Classic</text>
+  <text x="260" y="220" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="24" font-weight="400" fill="#9ca3af">On-Chain Governance for Ethereum Classic</text>
 
   <!-- Funding categories -->
-  <text x="260" y="270" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="18" font-weight="400" fill="#00ffae" fill-opacity="0.7">Core Software · Critical Infrastructure · Network Security · Futarchy Markets</text>
+  <text x="260" y="270" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="18" font-weight="400" fill="#00ffae" fill-opacity="0.7">Treasury · Governance · Proposals · Compliance</text>
 
   <!-- Footer: CTA left, URL right -->
   <g transform="translate(100, 350)">
-    <rect x="0" y="0" width="260" height="52" rx="26" fill="url(#btnGrad)"/>
-    <text x="130" y="35" text-anchor="middle" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="18" font-weight="600" fill="#0a0f10">Explore Olympia DAO</text>
+    <rect x="0" y="0" width="320" height="52" rx="26" fill="url(#btnGrad)"/>
+    <text x="160" y="35" text-anchor="middle" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="18" font-weight="600" fill="#0a0f10">Launch Governance App</text>
   </g>
-  <text x="100" y="450" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="18" font-weight="400" fill="#6b7280">Long-term sustainability for Ethereum Classic's core software, critical infrastructure, and network security.</text>
+  <text x="100" y="450" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="18" font-weight="400" fill="#6b7280">Transaction fee revenue funds the protocol vault — block rewards remain completely untouched.</text>
   <text x="1075" y="575" text-anchor="end" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="18" font-weight="400" fill="#00ffae" fill-opacity="0.7">olympiadao.org</text>
   <rect x="0" y="625" width="1200" height="5" fill="#00ffae" opacity="0.6"/>
 </svg>

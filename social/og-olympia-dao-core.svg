@@ -55,17 +55,17 @@
   <text x="674" y="165" text-anchor="middle" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="#00ffae" fill-opacity="0.8">Core DAO</text>
 
   <!-- Subtitle -->
-  <text x="260" y="220" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="24" font-weight="400" fill="#9ca3af">Sustainable Funding for Ethereum Classic</text>
+  <text x="260" y="220" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="24" font-weight="400" fill="#9ca3af">On-Chain Governance for Ethereum Classic</text>
 
   <!-- Funding categories -->
-  <text x="260" y="270" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="18" font-weight="400" fill="#00ffae" fill-opacity="0.7">Core Software · Critical Infrastructure · Public Goods · Emergency Response</text>
+  <text x="260" y="270" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="18" font-weight="400" fill="#00ffae" fill-opacity="0.7">Proposals · Voting · Timelock · Sanctions Compliance</text>
 
   <!-- Footer: CTA left, URL right -->
   <g transform="translate(100, 350)">
     <rect x="0" y="0" width="220" height="52" rx="26" fill="url(#btnGrad)"/>
-    <text x="110" y="35" text-anchor="middle" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="18" font-weight="600" fill="#0a0f10">Review Core Proposals</text>
+    <text x="110" y="35" text-anchor="middle" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="18" font-weight="600" fill="#0a0f10">Launch Governance App</text>
   </g>
-  <text x="100" y="450" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="18" font-weight="400" fill="#6b7280">Long-term stability for Ethereum Classic's core software and infrastructure</text>
+  <text x="100" y="450" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="18" font-weight="400" fill="#6b7280">Submit proposals, cast votes, and execute treasury actions on-chain</text>
   <text x="1075" y="575" text-anchor="end" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="18" font-weight="400" fill="#00ffae" fill-opacity="0.7">core.olympiadao.org</text>
   <rect x="0" y="625" width="1200" height="5" fill="#00ffae" opacity="0.6"/>
 </svg>

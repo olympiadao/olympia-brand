@@ -50,17 +50,17 @@
   <text x="260" y="170" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="56" font-weight="700" letter-spacing="-0.02em" fill="#ffffff">Olympia Treasury</text>
 
   <!-- Subtitle -->
-  <text x="260" y="220" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="24" font-weight="400" fill="#9ca3af">Ethereum Classic's Long-Term Sustainability Fund</text>
+  <text x="260" y="220" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="24" font-weight="400" fill="#9ca3af">Protocol-Funded Vault for Ethereum Classic</text>
 
   <!-- Categories -->
-  <text x="260" y="270" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="18" font-weight="400" fill="#00ffae" fill-opacity="0.7">Developer Retention · Infrastructure Maintenance · Emergency Response · Independence</text>
+  <text x="260" y="270" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="18" font-weight="400" fill="#00ffae" fill-opacity="0.7">Balance · Transactions · Governance · Live Data</text>
 
   <!-- Footer: CTA left, URL right -->
   <g transform="translate(100, 350)">
     <rect x="0" y="0" width="220" height="52" rx="26" fill="url(#btnGrad)"/>
     <text x="110" y="35" text-anchor="middle" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="18" font-weight="600" fill="#0a0f10">View the Vault</text>
   </g>
-  <text x="100" y="450" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="18" font-weight="400" fill="#6b7280">Ethereum Classic's protocol-funded ecosystem reserve.</text>
+  <text x="100" y="450" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="18" font-weight="400" fill="#6b7280">Live monitoring of the protocol vault. Transaction fee revenue funds the treasury.</text>
   <text x="1075" y="575" text-anchor="end" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="18" font-weight="400" fill="#00ffae" fill-opacity="0.7">olympiatreasury.org</text>
   <rect x="0" y="625" width="1200" height="5" fill="#00ffae" opacity="0.6"/>
 </svg>

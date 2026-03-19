@@ -4,7 +4,7 @@
 
 Canonical brand assets for the Olympia upgrade — a staged governance and funding system for Ethereum Classic.
 
-**Used by:** [olympiadao.org](https://olympiadao.org) · [olympiatreasury.org](https://olympiatreasury.org)
+**Used by:** [olympiadao.org](https://olympiadao.org) · [olympiatreasury.org](https://olympiatreasury.org) · [ethereumclassicdao.org](https://ethereumclassicdao.org) · [app.olympiadao.org](https://app.olympiadao.org)
 
 ---
 
@@ -47,17 +47,41 @@ The Olympia logomark is a torch with an ETC diamond emblem on a dark circular ba
 
 | Variant | File | Usage |
 |---------|------|-------|
-| Green (primary) | `logo/logomark-green.svg` | Dark backgrounds |
-| White | `logo/logomark-white.svg` | Dark backgrounds (monochrome) |
-| Black | `logo/logomark-black.svg` | Light backgrounds |
+| Green (primary) | `logo/olympia-logo.svg` | Dark backgrounds |
+| White | `logo/png/olympia-logo-white-*.png` | Dark backgrounds (monochrome) |
+| Black | `logo/png/olympia-logo-black-*.png` | Light backgrounds |
+| ETC diamond | `logo/ETC-logo.svg` | Standalone ETC branding |
 
 ### Wordmark
 
 **"OLYMPIA"** in Inter Bold, -0.02em letter-spacing.
 
+| Variant | File |
+|---------|------|
+| Green | `logo/wordmark-green.svg` |
+| White | `logo/wordmark-white.svg` |
+| Black | `logo/wordmark-black.svg` |
+
 ### Lockups
 
 Horizontal lockups combine logomark + wordmark. Available in white and black.
+
+| Variant | File |
+|---------|------|
+| White | `logo/lockup-horizontal-white.svg` |
+| Black | `logo/lockup-horizontal-black.svg` |
+
+### OG / Social Images
+
+Each product has an OG image (1200×630) with SVG source and PNG render.
+
+| Product | File | Accent |
+|---------|------|--------|
+| olympiadao.org | `social/og-olympia-dao` | Green |
+| olympiatreasury.org | `social/og-olympia-treasury` | Amber |
+| ethereumclassicdao.org | `social/og-ethereumclassicdao` | Green |
+| app.olympiadao.org | `social/og-olympia-dao-core` | Green |
+| Futarchy (Stage 3) | `social/og-olympia-futarchy` | Violet |
 
 ---
 
@@ -66,31 +90,38 @@ Horizontal lockups combine logomark + wordmark. Available in white and black.
 ```
 olympia-brand/
 ├── logo/
-│   ├── logomark-green.svg          # Primary mark
-│   ├── logomark-white.svg          # Monochrome (dark bg)
-│   ├── logomark-black.svg          # Monochrome (light bg)
+│   ├── olympia-logo.svg              # Primary logomark (green)
+│   ├── olympia-logo.png              # Primary logomark raster
+│   ├── ETC-logo.svg                  # Standalone ETC diamond
 │   ├── wordmark-green.svg
 │   ├── wordmark-white.svg
 │   ├── wordmark-black.svg
 │   ├── lockup-horizontal-white.svg
 │   ├── lockup-horizontal-black.svg
-│   └── png/                        # Rasterized at 512, 256, 128, 64px
+│   └── png/                          # Rasterized variants
+│       ├── olympia-logo-{64,128,256,512}.png
+│       ├── olympia-logo-white-{256,512}.png
+│       └── olympia-logo-black-{256,512}.png
 ├── favicon/
-│   ├── favicon.svg                 # Source
-│   ├── favicon.ico                 # 16+32+48px combined
-│   ├── favicon-{16,32,48}x{16,32,48}.png
-│   ├── apple-touch-icon.png        # 180px
-│   ├── android-chrome-{192,512}x{192,512}.png
-│   └── site.webmanifest
+│   ├── olympia/                      # Olympia favicon package
+│   │   ├── favicon.svg
+│   │   ├── favicon.ico
+│   │   ├── favicon-{16,32,48}x{16,32,48}.png
+│   │   ├── apple-touch-icon.png
+│   │   ├── android-chrome-{192,512}x{192,512}.png
+│   │   └── site.webmanifest
+│   └── etc/                          # ETC favicon package
+│       └── (same structure as olympia/)
 ├── social/
-│   ├── og-olympiadao.svg / .png    # 1200×630 OG image (green)
-│   ├── og-olympiatreasury.svg / .png  # Treasury variant (amber)
-│   ├── og-olympia-app.svg / .png   # Governance app (green + Demo badge)
-│   └── og-olympia-futarchy.svg / .png # Futarchy DAO (violet)
+│   ├── og-olympia-dao.svg / .png
+│   ├── og-olympia-treasury.svg / .png
+│   ├── og-ethereumclassicdao.svg / .png
+│   ├── og-olympia-dao-core.svg / .png
+│   └── og-olympia-futarchy.svg / .png
 └── tokens/
-    ├── colors.css                  # CSS custom properties (dark + light)
-    ├── colors.json                 # Machine-readable tokens
-    └── tailwind.css                # Tailwind CSS 4 @theme config
+    ├── colors.css                    # CSS custom properties (dark + light)
+    ├── colors.json                   # Machine-readable tokens
+    └── tailwind.css                  # Tailwind CSS 4 @theme config
 ```
 
 ---
@@ -107,33 +138,17 @@ olympia-brand/
 
 ---
 
-## Differentiation from ETCswap
-
-Both projects are on Ethereum Classic but have distinct visual identities:
-
-| Aspect | ETCswap | Olympia |
-|--------|---------|---------|
-| Green | `#33FF99` (bright mint) | `#00ffae` (neon teal) |
-| Background | `#030508` (blue-black) | `#0a0f10` (warm dark) |
-| Surface | Glass morphism + blur | Translucent cards + soft shadows |
-| Font | DM Sans | Inter |
-| Motion | R3F 3D + GSAP + Lenis | CSS transitions only |
-| Tone | DeFi / trading energy | Governance / institutional |
-| Interaction | Scale + glow | Lift (translateY) + border highlight |
-
----
-
 ## Commands
 
 ```bash
 # Generate PNGs from SVG (requires ImageMagick)
-convert -background none logo/logomark-green.svg -resize 512x512 logo/png/logomark-green-512.png
+convert -background none logo/olympia-logo.svg -resize 512x512 logo/png/olympia-logo-512.png
 
 # Generate favicon ICO
-convert favicon/favicon-16x16.png favicon/favicon-32x32.png favicon/favicon-48x48.png favicon/favicon.ico
+convert favicon/olympia/favicon-16x16.png favicon/olympia/favicon-32x32.png favicon/olympia/favicon-48x48.png favicon/olympia/favicon.ico
 
 # Render OG images
-convert -background none social/og-olympiadao.svg -resize 1200x630 social/og-olympiadao.png
+convert -background none social/og-olympia-dao.svg -resize 1200x630 social/og-olympia-dao.png
 ```
 
 ---
@@ -148,10 +163,10 @@ convert -background none social/og-olympiadao.svg -resize 1200x630 social/og-oly
 | **Status** | Active / Current |
 | **Address** | 30 N Gould St Ste R, Sheridan, WY 82801 |
 
-**Copyright format:** `© 2025 Ethereum Classic DAO LLC. All rights reserved.`
+**Copyright format:** `© 2026 Ethereum Classic DAO LLC. All rights reserved.`
 
 ---
 
 ## Copyright
 
-© 2025 Ethereum Classic DAO LLC. All rights reserved.
+© 2026 Ethereum Classic DAO LLC. All rights reserved.

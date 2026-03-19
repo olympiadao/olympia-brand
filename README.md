@@ -1,5 +1,7 @@
 # Olympia Brand
 
+> **Production** — Canonical brand assets for the Olympia ecosystem.
+
 Canonical brand assets for the Olympia upgrade — a staged governance and funding system for Ethereum Classic.
 
 **Used by:** [olympiadao.org](https://olympiadao.org) · [olympiatreasury.org](https://olympiatreasury.org)

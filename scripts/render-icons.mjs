@@ -252,6 +252,56 @@ ${mark.body}
   }
 }
 
+// ── logo/png raster set ─────────────────────────────────────────────────────
+//
+// SVG is right for a page logo and is what the sites use: browser support for
+// SVG in <img> is universal, and next/image serves .svg untouched (it sets
+// `unoptimized` itself rather than proxying through the Image Optimization API,
+// which would reject SVG without dangerouslyAllowSVG).
+//
+// A raster set still earns its place. Some consumers genuinely cannot take SVG:
+// an og:image, because scrapers do not render SVG; an email client; a README on
+// a surface that strips it; a chat unfurl. These are those files.
+//
+// They were previously the ONLY stale assets in the repo -- untouched since the
+// mark was corrected, so every one still showed the stepped handle, and the
+// plated variants carried the same off-token #17311f plate the favicons were
+// rebuilt to remove. Regenerated in place: same paths, same variants, corrected
+// artwork. The paths are a public interface, so nothing is renamed.
+if (!only) {
+  const mark = readMark('logo/olympia-torch.svg');
+  console.log('\n  logo/png raster set  (for consumers that cannot take SVG)');
+  const RASTERS = [
+    // Plated, matching the icon tiles: brand green on the brand ground.
+    ...[64, 128, 256, 512].map((s) => [`logo/png/olympia-logo-${s}.png`, s, { plated: true }]),
+    // Bare silhouettes on transparency, for a surface supplying its own ground.
+    ...[256, 512].flatMap((s) => [
+      [`logo/png/olympia-logo-black-${s}.png`, s, { flat: '#000000' }],
+      [`logo/png/olympia-logo-white-${s}.png`, s, { flat: '#ffffff' }],
+    ]),
+  ];
+  for (const [file, size, opt] of RASTERS) {
+    const svg = opt.plated
+      ? tile(mark, size, { fill: MARK })
+      : `<svg xmlns="http://www.w3.org/2000/svg" width="${Math.round((size * mark.w) / mark.h)}" height="${size}" viewBox="0 0 ${mark.w} ${mark.h}" fill="${opt.flat}">${mark.body}</svg>`;
+    const out = join(root, file);
+    const tmpOut = join(tmp, file.split('/').pop());
+    const f = join(tmp, 'raster.svg');
+    writeFileSync(f, svg);
+    execFileSync('inkscape', [f, '--export-type=png', `--export-filename=${tmpOut}`, `--export-height=${size}`], { stdio: 'pipe' });
+    const fresh = readFileSync(tmpOut);
+    if (CHECK) {
+      const same = existsSync(out) && Buffer.compare(fresh, readFileSync(out)) === 0;
+      if (!same) differs++;
+      console.log(`    ${same ? 'ok      ' : 'DIFFERS '}${file}`);
+    } else {
+      writeFileSync(out, fresh);
+      wrote++;
+      console.log(`    wrote  ${file.padEnd(40)} ${String(fresh.length).padStart(7)}B`);
+    }
+  }
+}
+
 // ── maskable safe zone ──────────────────────────────────────────────────────
 //
 // Android may crop a maskable icon to any shape inside the square, and only the

@@ -1,0 +1,194 @@
+{
+  "$description": "CoreNFT design specification \u2014 the colors, type and geometry the on-chain renderer implements. This repository is the source; olympia-governance-contracts/src/nft/OlympiaSVG.sol is the implementation. Every color here names a token from ../tokens/colors.json rather than carrying a hex, so the NFT cannot drift from the product suite. Validate with: node scripts/check-nft-contrast.mjs",
+  "canvas": {
+    "$comment": "Square, and 500 units specifically \u2014 block explorers render token inventory in a square grid. Radii match the squircle frame.",
+    "size": 500,
+    "radius": 42,
+    "innerInset": 16,
+    "innerRadius": 26
+  },
+  "type": {
+    "$comment": "MONO EVERYWHERE, and that is a decision. Fonts cannot be embedded on-chain at reasonable cost, so every viewer substitutes. A sans substitution is unpredictable in width and voice; a mono substitution is close to the brand's own technical face and degrades in the right direction. The stack ends in a generic family so the fallback is real, not decorative. Do not position text by measured advance width \u2014 the substituted face will not match.",
+    "stack": "'JetBrains Mono', 'Courier New', monospace",
+    "minSize": 10,
+    "$minSizeComment": "Nothing smaller than 10px. 8px is unreadable at inventory-grid scale regardless of contrast, and it forced a de-emphasised fill that failed AA.",
+    "roles": {
+      "wordmark": {
+        "size": 56,
+        "weight": 200,
+        "tracking": 8,
+        "color": "text-primary",
+        "on": "card",
+        "$comment": "Large text (>=24px), so the 3:1 threshold applies."
+      },
+      "subtitle": {
+        "size": 14,
+        "weight": "bold",
+        "tracking": 1,
+        "color": "brand-green",
+        "on": "card",
+        "$comment": "14px bold is still SMALL text \u2014 the large-text exemption needs >=18.66px when bold. 4.5:1 applies."
+      },
+      "border": {
+        "size": 10,
+        "color": "brand-green",
+        "on": "card",
+        "$comment": "The rotating border text. Four phase-shifted copies; see nft/README.md."
+      },
+      "badge-label": {
+        "size": 12,
+        "color": "brand-green",
+        "alpha": 0.6,
+        "on": "badge"
+      },
+      "badge-value": {
+        "size": 12,
+        "color": "text-primary",
+        "on": "badge"
+      },
+      "corner-chain": {
+        "size": 10,
+        "color": "brand-green",
+        "alpha": 0.6,
+        "on": "card",
+        "$comment": "Was alpha 0.4, which measured 3.08:1 and failed AA. Minimum alpha for brand green to clear 4.5:1 on the worst card is 0.541; 0.6 is the rounded floor with headroom."
+      },
+      "corner-version": {
+        "size": 10,
+        "color": "brand-green",
+        "alpha": 0.6,
+        "on": "card",
+        "$comment": "Was 8px at alpha 0.25, which measured 1.90:1 \u2014 the worst failure in the artwork. Raised to the 10px floor and the same alpha as the chain label."
+      }
+    }
+  },
+  "surfaces": {
+    "card": {
+      "$comment": "Five per-token backgrounds, chosen by a hash of the tokenId. The variation is the point \u2014 it is what makes each token feel individual \u2014 and every value is a brand dark surface or derived from one, so the NFT reads as part of the suite. The spread is deliberately subtle; these are all near-black.",
+      "variants": [
+        {
+          "token": "bg-deep"
+        },
+        {
+          "token": "bg-primary"
+        },
+        {
+          "token": "bg-surface"
+        },
+        {
+          "token": "bg-elevated"
+        },
+        {
+          "token": "bg-surface",
+          "over": "brand-green-subtle",
+          "$comment": "Green-tinted, derived from tokens rather than hand-picked. Preserves the character of the retired green-tinted surfaces without forking the palette."
+        }
+      ]
+    },
+    "badge": {
+      "$comment": "The metadata chips. A scrim over whichever card variant the token drew.",
+      "token": "bg-primary",
+      "alpha": 0.7,
+      "over": "card",
+      "radius": 8
+    }
+  },
+  "glow": {
+    "$comment": "Per-token glow color, also hash-selected. Non-text, so the 3:1 threshold applies. All five are brand tokens.",
+    "variants": [
+      {
+        "token": "brand-green"
+      },
+      {
+        "token": "brand-green-hover"
+      },
+      {
+        "token": "brand-green-active"
+      },
+      {
+        "token": "brand-green-muted"
+      },
+      {
+        "token": "accent-teal"
+      },
+      {
+        "token": null,
+        "$comment": "A sixth state with no glow at all."
+      }
+    ],
+    "pulse": {
+      "values": ".1;.25;.1",
+      "dur": "3s"
+    }
+  },
+  "animation": {
+    "$comment": "SMIL only. Scripted animation is stripped by explorer sanitizers; SMIL survives.",
+    "borderText": {
+      "copies": 4,
+      "startOffsets": [
+        "-100%",
+        "-50%",
+        "0%",
+        "50%"
+      ],
+      "animate": "startOffset 0% -> 100%",
+      "dur": "30s",
+      "$comment": "Four phase-shifted copies is what makes the loop seamless \u2014 one is always entering as another leaves. Changing the count or the offsets breaks the seam."
+    }
+  },
+  "hud": {
+    "$comment": "The HUD and circuitry vocabulary, carried over from the OG share cards so the token reads as part of the same product suite. Same grammar \u2014 corner brackets, crosshairs, a measurement rule, PCB traces terminating in nodes, and a reticle around the mark \u2014 but retuned for this surface. Two things differ from the cards and both matter.",
+    "$scaleNote": "THUMBNAIL SCALE. An explorer inventory grid renders this at roughly 150-300px, so a 500-unit canvas is drawn at about 0.30x. The share cards use trace opacities as low as 0.07, which measures 1.12:1 against the card and simply disappears at that size. Every opacity here is floored at 0.15, and anything meant to read as structure sits at 0.30 or above.",
+    "$conformanceNote": "These elements are PURE DECORATION. WCAG 2.1 SC 1.4.11 explicitly exempts decoration from the 3:1 non-text bar, and there are no controls on an NFT to perceive. So the floor below is a DESIGN requirement of this brand, not a conformance one, and check-nft-contrast.mjs reports it as such. Do not quote these ratios as WCAG results.",
+    "$gasNote": "Every path costs bytes, and bytes cost gas on a fully on-chain render. The share cards can afford 15+ traces; this cannot. Keep the total HUD path count at or below `maxPaths`, and prefer a few deliberate elements over a dense field.",
+    "minOpacity": 0.15,
+    "structuralOpacity": 0.3,
+    "maxPaths": 18,
+    "color": "brand-green",
+    "elements": {
+      "cornerBracket": {
+        "count": 4,
+        "length": 26,
+        "strokeWidth": 2,
+        "opacity": 0.45,
+        "$comment": "At the inner frame corners (inset 16, radius 26). The brightest HUD element \u2014 it defines the frame, so it must survive the thumbnail."
+      },
+      "crosshair": {
+        "count": 3,
+        "radius": 5,
+        "strokeWidth": 1,
+        "opacity": 0.3,
+        "$comment": "Sparse punctuation. Three, not the cards' scattering \u2014 at 0.30x a dense field reads as noise."
+      },
+      "tickRule": {
+        "count": 1,
+        "ticks": 16,
+        "majorEvery": 4,
+        "strokeWidth": 1,
+        "opacity": 0.25,
+        "majorOpacity": 0.45,
+        "$comment": "One measurement rule, not the cards' full-width scale. Raised from the cards' 0.16/0.30 because at thumbnail the minor ticks vanish first."
+      },
+      "trace": {
+        "count": 5,
+        "strokeWidth": 1.5,
+        "opacity": 0.25,
+        "nodeRadius": 2.5,
+        "nodeOpacity": 0.55,
+        "$comment": "PCB routing: right angles and 45-degree diagonals only, each terminating in a filled node. Opacity raised from the cards' 0.07-0.22 floor. THE TRACES RUN INTO THE BASE OF THE MARK \u2014 infrastructure feeding the flame. That is the one idea the share cards contributed that is Olympia's own, and it is why the torch belongs at the end of the routing rather than floating above it."
+      },
+      "reticle": {
+        "count": 1,
+        "outerRadius": 150,
+        "innerRadius": 122,
+        "outerOpacity": 0.18,
+        "innerOpacity": 0.3,
+        "capOpacity": 0.5,
+        "capSweep": 32,
+        "strokeWidth": 2,
+        "dash": "2 8",
+        "$comment": "Concentric rings with four cardinal arc caps, framing the mark as an instrument rather than containing it. Sized for the 500 canvas; the cards use 152/188 on 1200x630. Lands with the torch in v0.4."
+      }
+    }
+  }
+}

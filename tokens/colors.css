@@ -82,8 +82,8 @@
   --brand-amber-subtle: rgba(245, 158, 11, 0.08);
   --border-default:     var(--ol-ink-border);
   --border-subtle:      rgba(255, 255, 255, 0.04);
-  --border-strong:      rgba(255, 255, 255, 0.16);
-  --border-brand:       rgba(0, 255, 174, 0.3);
+  --border-strong:      rgba(255, 255, 255, 0.35);
+  --border-brand:       rgba(0, 255, 174, 0.4);
   --focus-ring:         var(--ol-green-neon);
   --color-success:      var(--ol-green-neon);
   --color-error:        var(--ol-red-bright);
@@ -121,8 +121,8 @@
   --brand-amber-subtle: rgba(146, 64, 14, 0.08);
   --border-default:     var(--ol-paper-border);
   --border-subtle:      rgba(0, 0, 0, 0.04);
-  --border-strong:      rgba(0, 0, 0, 0.16);
-  --border-brand:       rgba(0, 122, 83, 0.25);
+  --border-strong:      rgba(0, 0, 0, 0.43);
+  --border-brand:       rgba(0, 122, 83, 0.73);
   --focus-ring:         var(--ol-green-deep);
   --color-success:      var(--ol-green-deep-hover);
   --color-error:        var(--ol-red-deep);
@@ -163,8 +163,8 @@
     --brand-amber-subtle: rgba(146, 64, 14, 0.08);
     --border-default:     var(--ol-paper-border);
     --border-subtle:      rgba(0, 0, 0, 0.04);
-    --border-strong:      rgba(0, 0, 0, 0.16);
-    --border-brand:       rgba(0, 122, 83, 0.25);
+    --border-strong:      rgba(0, 0, 0, 0.43);
+    --border-brand:       rgba(0, 122, 83, 0.73);
     --focus-ring:         var(--ol-green-deep);
     --color-success:      var(--ol-green-deep-hover);
     --color-error:        var(--ol-red-deep);

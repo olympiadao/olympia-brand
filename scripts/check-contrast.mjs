@@ -329,7 +329,11 @@ function rowsFor(scope, fallback) {
     rows.push({
       token,
       kind,
+      // The declared value, plus what it actually composites to when it carries
+      // alpha. Printing only the base is how a border reading 1.50:1 displayed as
+      // #ffffff and looked like a pass.
       value: hex(color),
+      composited: color.a < 1 && worst ? hex(composite(color, worst.bg)) : null,
       inherited: !scope.has(token),
       need: AA[kind],
       needAAA: AAA[kind],
@@ -347,7 +351,15 @@ function rowsFor(scope, fallback) {
       if (!c) continue;
       let worst = null;
       for (const s of surfaces) {
-        const r = ratio(c, s.color);
+        // COMPOSITE FIRST. A token carrying alpha is not the colour a reader
+        // sees — rgba(0,255,174,0.3) over a dark surface renders as roughly
+        // #0c5840, and measuring the opaque base instead reports 13.46:1 for
+        // something that is actually 2.21:1. That defect shipped: it reported
+        // AAA for two border tokens that fail 3:1 in both themes, and it was
+        // caught by a consuming site rather than here. The badge path below
+        // always composited; this path did not, and nothing tied them together.
+        const fg = composite(c, s.color);
+        const r = ratio(fg, s.color);
         if (!worst || r < worst.r) worst = { r, on: s.label, bg: s.color };
       }
       push(token, kind, c, worst);
@@ -421,9 +433,12 @@ function report() {
       if (!passAAA) aaaFail++;
       const tight = passAA && r.r < r.need + 0.3;
       if (!passAA || VERBOSE || tight || r.inherited || (AAA_GATE && !passAAA)) {
-        const level = !passAA ? 'FAIL ' : passAAA ? 'AAA  ' : 'AA   ';
+        // SC 1.4.11 has no AAA level, and AAA.nontext is set equal to AA.nontext
+        // so the gate behaves. Labelling a non-text token "AAA" therefore claims a
+        // grade that does not exist — a 3.09:1 border is AA and nothing more.
+        const level = !passAA ? 'FAIL ' : r.kind !== 'text' ? 'AA   ' : passAAA ? 'AAA  ' : 'AA   ';
         console.log(
-          `  ${level} ${r.token.padEnd(w)}  ${r.value}  ${r.r.toFixed(2).padStart(6)} : 1  ` +
+          `  ${level} ${r.token.padEnd(w)}  ${r.composited ? `${r.value}@a->${r.composited}` : r.value}  ${r.r.toFixed(2).padStart(6)} : 1  ` +
             `(AA ${r.need}${r.kind === 'text' ? `, AAA ${r.needAAA}` : ''})  on ${r.on}` +
             (r.inherited ? '  <- INHERITED, not declared in this theme' : '') +
             (passAA && tight ? '  <- under 0.3 of headroom' : ''),

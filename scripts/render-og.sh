@@ -128,7 +128,17 @@ for svg in "${sources[@]}"; do
   # The cards are full-bleed with no transparency, so the alpha channel is dead
   # weight — every pixel is opaque. Dropping it is lossless here and takes ~10%
   # off the file.
-  convert "$out" -alpha off -define png:compression-level=9 "$out"
+  #
+  # Then quantise to a 256-colour palette. The card is a near-black ground, one
+  # accent and white type, so it uses about 5,600 distinct colours almost all of
+  # which are gradient steps in the reticle glow. Measured: 534 KB -> 137 KB, a
+  # 74% reduction at RMSE 0.005 (0.5%), which is not perceptible on the artwork
+  # and was checked by eye on the glow, where banding would show first.
+  #
+  # This matters for reach rather than for tidiness. A scraper fetches the card
+  # to build a link preview, and some give up on a slow fetch; a smaller file is
+  # more likely to render at all.
+  convert "$out" -alpha off -colors 256 -define png:compression-level=9 "$out"
 
   if [ "$CHECK" = 1 ]; then
     committed="$SOCIAL/$base.png"

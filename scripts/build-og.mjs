@@ -100,6 +100,40 @@ const CARDS = [
     url: 'futarchy.olympiadao.org',
     accent: 'brand-green',
   },
+  // ── per-route cards ───────────────────────────────────────────────────────
+  // A sub-route sharing the homepage's card means every shared link looks like
+  // the homepage, which wastes the one impression a link preview gets. Copy here
+  // tracks each page's own <title>/description so the card and the result agree.
+  {
+    file: 'og-olympia-upgrade',
+    eyebrow: 'OLYMPIA DAO \u00b7 UPGRADE',
+    title: 'Olympia Upgrade',
+    subtitle: 'Glamsterdam EVM Alignment for Ethereum Classic',
+    chips: ['Five Stages', 'ECIP-1122', 'Fukuii', 'Core-Geth'],
+    note: 'EVM alignment, a base-fee market funding the protocol treasury, and node upgrade guides.',
+    url: 'olympiadao.org/upgrade',
+    accent: 'brand-green',
+  },
+  {
+    file: 'og-olympia-governance',
+    eyebrow: 'OLYMPIA DAO \u00b7 GOVERNANCE',
+    title: 'Governance Architecture',
+    subtitle: 'Three-Layer Governance for Ethereum Classic',
+    chips: ['On-Chain Voting', 'Futarchy', 'Timelock', 'ECIP-1113'],
+    note: 'Binding on-chain voting, futarchy prediction markets, and adoption by network participants.',
+    url: 'olympiadao.org/governance',
+    accent: 'brand-green',
+  },
+  {
+    file: 'og-olympia-clients',
+    eyebrow: 'OLYMPIA DAO \u00b7 CLIENTS',
+    title: 'Ethereum Classic Clients',
+    subtitle: 'Fukuii and Core-Geth',
+    chips: ['Fukuii', 'Core-Geth', 'Native Client', 'Maintenance'],
+    note: "Fukuii is Ethereum Classic's first native client. Core-Geth is a go-ethereum derivative in maintenance.",
+    url: 'olympiadao.org/clients',
+    accent: 'brand-green',
+  },
   // Ethereum Classic DAO is a distinct organisation with its own repository, and
   // it will likely grow its own /brand aligned to its institutional positioning.
   // Its card lives here anyway because it is part of this product suite —

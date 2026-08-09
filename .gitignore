@@ -1,38 +1,96 @@
-# Secrets & credentials
+# ─────────────────────────────────────────────────────────────────────────────
+# olympia-brand — .gitignore
+#
+# This repository is PUBLIC. Everything not ignored here is world-readable the
+# moment it is pushed. Never remove the SECURITY blocks.
+#
+# This repo has no package manager and installs nothing. `scripts/` holds
+# dependency-free Node and shell commands you run by hand, so there is no
+# node_modules/ or build-output section. Add the ecosystem's artifact patterns
+# only if that changes.
+# ─────────────────────────────────────────────────────────────────────────────
+
+# == SECURITY: secrets & credentials ==
 .env
 .env.*
 !.env.example
+!.env.*.example
 *.pem
 *.key
 *.p12
 *.pfx
+*.jks
 credentials.json
 service-account.json
+*.credentials
 secrets/
+.secrets/
+*.secret
+
+# == SECURITY: SSH / signing key material ==
+# Extensionless by design — *.key and *.pem do not match these.
+id_rsa
+id_ecdsa
+id_ed25519
+
+# == SECURITY: package-registry auth ==
+# These carry registry tokens. A committed .npmrc can also silently weaken
+# install-time supply-chain settings for anyone who runs a package manager here.
+.npmrc
+.yarnrc
+.yarnrc.yml
+
+# == SECURITY: wallet / node key material ==
 keystore/
 *.keystore
 wallet.json
 mnemonic.txt
 
-# Claude Code working directory (local only)
-.claude/
-CLAUDE.md
-
-# Internal development directory
+# == Local working files — never travel ==
 .local/
-
 SESSION_NOTES.md
 PLANNING.md
 SCRATCH.md
 *.scratch.*
 *.draft.*
 
-# IDE
-.vscode/settings.json
+# == Claude Code ==
+# This directory is TRACKED so repo-local agents, skills and rules travel with
+# the repo. Only machine-local and agent-written state is held back. Do not
+# invert this into a blanket ignore: an agent inside an ignored directory never
+# reaches a clone, and root CLAUDE.md is the file that loads AGENTS.md at all.
+.claude/settings.local.json
+.claude/worktrees/
+.claude/agent-memory-local/
+.claude/launch.json
+.claude/scheduled_tasks.json
+CLAUDE.local.md
+.claude/**/*.local.*
+.claude/**/*-local/
+
+# == OS ==
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# == Editors / IDE ==
+.vscode/
 .idea/
 *.swp
 *.swo
+*~
 
-# OS
-.DS_Store
-Thumbs.db
+# == Logs / temp ==
+*.log
+logs/
+tmp/
+*.tmp
+*.pid
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Repo-specific ignores BELOW this line:
+# ─────────────────────────────────────────────────────────────────────────────
+
+# Render scratch — scripts/render-og.sh writes finished PNGs into social/,
+# never here; anything landing in this directory is intermediate.
+scripts/.render-tmp/

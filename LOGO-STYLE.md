@@ -8,13 +8,56 @@ plainly rather than left for someone to discover by shipping a blurry logo.
 
 | Mark | Files | What it is |
 |---|---|---|
-| **Olympia mark** | `logo/olympia-torch.svg` (vector master), `logo/olympia-logo.png`, `logo/png/*`, `favicon/olympia/*` | The primary identity — a torch with a flame, an ETC diamond set into the handle |
+| **Olympia torch** | `logo/olympia-torch.svg` (vector master), `logo/olympia-mark-{light,dark}.svg`, `favicon/olympia/*` | The primary identity — a torch with a flame, an ETC diamond set into the handle |
 | **ETC diamond** | `logo/ETC-logo.svg`, `favicon/etc/*` | The Ethereum Classic diamond, `#33FF99`, genuine vector at `viewBox="0 0 512 512"` |
 
-They coexist deliberately. Use the Olympia mark for Olympia products; use the
-ETC diamond where the subject is Ethereum Classic itself.
+They coexist deliberately, and **they are not interchangeable.** The torch is
+**Olympia's** identity and takes `--brand-green`, because it belongs to this
+palette. The diamond is the **Ethereum Classic network's** identity and keeps
+`#33FF99`, ETC's own green — deliberately not a token here, because it is not
+ours to restyle. A network mark repainted in a product's palette stops meaning
+"this chain" and starts meaning "this product".
 
-## Use `logo/olympia-torch.svg` — it is the vector master
+If a surface needs to say *Ethereum Classic*, use the diamond. If it needs to
+say *Olympia*, use the torch.
+
+## Which file to reach for
+
+This is the decision that keeps being got wrong, so it is a table.
+
+| Situation | File | Why |
+|---|---|---|
+| Inline `<svg>` in a page | `logo/olympia-torch.svg` | `currentColor`, so it follows the theme from one file |
+| `<img>` / `next/image` on a **dark** surface | `logo/olympia-mark-dark.svg` | `#00ffae`. An `<img>` loads into its own document and cannot see your tokens, so `currentColor` resolves to black there |
+| `<img>` / `next/image` on a **light** surface | `logo/olympia-mark-light.svg` | `#007a53`. The dark-theme green measures **1.3:1** on a pale surface |
+| Browser tab, PWA, home screen | `favicon/olympia/*` | Generated tiles; see below |
+| Anywhere the subject is the chain | `logo/ETC-logo.svg`, `favicon/etc/*` | The network mark |
+
+**Do not use a favicon as a page logo.** The favicons are *tiles* — mark on a
+filled plate, sized and inset per platform. The page logo is the bare mark.
+
+## The icon packages are generated
+
+```bash
+node scripts/render-icons.mjs           # regenerate both packages
+node scripts/render-icons.mjs --check   # verify they reproduce; writes nothing
+```
+
+Source is the vector mark; every colour comes from `tokens/colors.json`. Three
+things that are easy to get wrong and are handled there:
+
+- **The tile is filled, not transparent.** A browser tab strip is painted in the
+  *user's* chrome theme, so a transparent icon has to survive both a near-white
+  and a near-black backing. The torch in brand green is legible on one and nearly
+  invisible on the other.
+- **`apple-touch-icon` is 180×180**, square and opaque. Apple has specified 180
+  since iOS 8 — 192 is the *Android* size — and Apple composites its own
+  background and applies its own squircle.
+- **`icon-maskable-512.png` exists and is inset to 45%.** Android may crop to any
+  shape inside the square and only the centre 80% circle is guaranteed. Without
+  it a launcher can clip the flame.
+
+## Provenance: what these files are, and what they are not
 
 **`logo/olympia-torch.svg` is the file to reach for.** Genuine vector, bounded to
 its own ink, `fill="currentColor"` with `color="#ffffff"` so it renders the

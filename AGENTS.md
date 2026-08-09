@@ -52,12 +52,17 @@ scripts/
   build-tokens.mjs        generates the three files above from the JSON
   check-contrast.mjs      the accessibility assessment
   render-og.sh            renders social/*.svg to 1200x630 PNG, reproducibly
+  render-icons.mjs        generates both favicon/app-icon packages from the
+                           vector marks; --check verifies they reproduce
 fonts/                    vendored Inter + JetBrains Mono (OFL-1.1) and a scoped
                            fontconfig, so a render does not depend on what is
                            installed on the machine doing it
-logo/                     Primary marks: olympia-logo.{png,svg}, ETC-logo.svg,
-                           wordmark-{black,green,white}.svg,
-                           lockup-horizontal-{black,white}.svg, png/ raster set
+logo/                     olympia-torch.svg is the VECTOR MASTER (currentColor).
+                           olympia-mark-{light,dark}.svg are GENERATED flat marks
+                           for <img> consumers, which cannot inherit currentColor.
+                           ETC-logo.svg is the network mark and keeps its own
+                           #33FF99. Also olympia-logo.{png,svg} (legacy raster),
+                           wordmark-*, lockup-horizontal-*, png/ raster set
 favicon/olympia/          Full favicon package for the Olympia mark
 favicon/etc/              Full favicon package for the ETC diamond mark
 social/                   OG images, SVG source + PNG render, one pair per product.
@@ -95,6 +100,8 @@ node scripts/check-contrast.mjs --solve  # propose a compliant value for anythin
 node scripts/check-nft-contrast.mjs      # AA gate for the CoreNFT design in nft/spec.json
 ./scripts/render-og.sh                   # re-render every share card from its SVG
 ./scripts/render-og.sh --check           # verify the committed PNGs reproduce; writes nothing
+node scripts/render-icons.mjs            # regenerate the favicon/app-icon packages
+node scripts/render-icons.mjs --check    # verify the committed icons reproduce
 ```
 
 `render-og.sh` needs Inkscape 1.x and ImageMagick. It renders through the

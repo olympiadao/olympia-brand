@@ -20,6 +20,7 @@ tokens, logos, favicons and OG images.
 | `favicon/olympia/`, `favicon/etc/` | Complete favicon packages for both marks |
 | `social/` | Open Graph share cards, SVG source and 1200×630 PNG render |
 | `fonts/` | Inter and JetBrains Mono, vendored (OFL-1.1), with a scoped fontconfig |
+| `favicon/` | Generated icon packages — `render-icons.mjs`, not hand-made |
 | `nft/` | CoreNFT token artwork, designed here before deployment |
 
 ## Using the tokens

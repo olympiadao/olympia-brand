@@ -62,29 +62,29 @@
 
   <!-- Eyebrow -->
   <text x="88" y="152" font-family="JetBrains Mono, monospace" font-size="15"
-        letter-spacing="0.22em" fill="#00ffae" fill-opacity="0.9">OLYMPIA DAO · FUTARCHY</text>
+        letter-spacing="0.22em" fill="#00ffae" fill-opacity="0.9">OLYMPIA DAO · CORENFT</text>
 
   <!-- Title -->
   <text x="88" y="240" font-family="Inter, sans-serif" font-size="68" font-weight="700"
-        letter-spacing="-0.025em" fill="#ffffff">Futarchy Markets</text>
+        letter-spacing="-0.025em" fill="#ffffff">CoreNFT</text>
 
   <!-- Accent rule -->
   <rect x="88" y="270" width="180" height="3" fill="url(#rule)"/>
 
   <!-- Subtitle -->
   <text x="88" y="330" font-family="Inter, sans-serif" font-size="25" font-weight="400"
-        fill="#c3c5cb">Prediction Markets for Ethereum Classic</text>
+        fill="#c3c5cb">Core Contributor Token for Olympia DAO.</text>
 
   <!-- Note -->
   <text x="88" y="380" font-family="Inter, sans-serif" font-size="17" font-weight="400"
-        fill="#9ca3af">Wisdom of the crowd. Vote on values, but bet on beliefs.</text>
+        fill="#9ca3af">Earned. One vote per Core Contributor. Never sold, delegated, or weighted by balance.</text>
 
   <!-- Chips -->
-  <g transform="translate(88 430)"><rect x="0" y="0" width="97" height="38" rx="19" fill="none" stroke="#00ffae" stroke-opacity="0.35"/><circle cx="17" cy="19" r="3" fill="#00ffae" fill-opacity="0.9"/><text x="28" y="24" font-family="JetBrains Mono, monospace" font-size="14" letter-spacing="0.02em" fill="#c3c5cb">Markets</text></g><g transform="translate(197 430)"><rect x="0" y="0" width="115" height="38" rx="19" fill="none" stroke="#00ffae" stroke-opacity="0.35"/><circle cx="17" cy="19" r="3" fill="#00ffae" fill-opacity="0.9"/><text x="28" y="24" font-family="JetBrains Mono, monospace" font-size="14" letter-spacing="0.02em" fill="#c3c5cb">Proposals</text></g><g transform="translate(324 430)"><rect x="0" y="0" width="187" height="38" rx="19" fill="none" stroke="#00ffae" stroke-opacity="0.35"/><circle cx="17" cy="19" r="3" fill="#00ffae" fill-opacity="0.9"/><text x="28" y="24" font-family="JetBrains Mono, monospace" font-size="14" letter-spacing="0.02em" fill="#c3c5cb">Oracle Resolution</text></g><g transform="translate(523 430)"><rect x="0" y="0" width="124" height="38" rx="19" fill="none" stroke="#00ffae" stroke-opacity="0.35"/><circle cx="17" cy="19" r="3" fill="#00ffae" fill-opacity="0.9"/><text x="28" y="24" font-family="JetBrains Mono, monospace" font-size="14" letter-spacing="0.02em" fill="#c3c5cb">Settlement</text></g>
+  <g transform="translate(88 430)"><rect x="0" y="0" width="115" height="38" rx="19" fill="none" stroke="#00ffae" stroke-opacity="0.35"/><circle cx="17" cy="19" r="3" fill="#00ffae" fill-opacity="0.9"/><text x="28" y="24" font-family="JetBrains Mono, monospace" font-size="14" letter-spacing="0.02em" fill="#c3c5cb">Soulbound</text></g><g transform="translate(215 430)"><rect x="0" y="0" width="250" height="38" rx="19" fill="none" stroke="#00ffae" stroke-opacity="0.35"/><circle cx="17" cy="19" r="3" fill="#00ffae" fill-opacity="0.9"/><text x="28" y="24" font-family="JetBrains Mono, monospace" font-size="14" letter-spacing="0.02em" fill="#c3c5cb">One Vote Per Contributor</text></g><g transform="translate(477 430)"><rect x="0" y="0" width="151" height="38" rx="19" fill="none" stroke="#00ffae" stroke-opacity="0.35"/><circle cx="17" cy="19" r="3" fill="#00ffae" fill-opacity="0.9"/><text x="28" y="24" font-family="JetBrains Mono, monospace" font-size="14" letter-spacing="0.02em" fill="#c3c5cb">Non-Delegable</text></g><g transform="translate(640 430)"><rect x="0" y="0" width="88" height="38" rx="19" fill="none" stroke="#00ffae" stroke-opacity="0.35"/><circle cx="17" cy="19" r="3" fill="#00ffae" fill-opacity="0.9"/><text x="28" y="24" font-family="JetBrains Mono, monospace" font-size="14" letter-spacing="0.02em" fill="#c3c5cb">Earned</text></g>
 
   <!-- Footer -->
   <text x="88" y="600" font-family="JetBrains Mono, monospace" font-size="14"
         letter-spacing="0.06em" fill="#8b93a1">ethereum classic</text>
   <text x="1112" y="600" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="16"
-        letter-spacing="0.02em" fill="#00ffae">futarchy.olympiadao.org</text>
+        letter-spacing="0.02em" fill="#00ffae">core.olympiadao.org</text>
 </svg>

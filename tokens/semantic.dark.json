@@ -1,0 +1,201 @@
+{
+  "$description": "Olympia role tokens — dark. These are what a component references; never a raw palette color. Swapping this file is what changes the theme. Every foreground here clears WCAG 2.1 AA (4.5:1 text, 3:1 non-text) on the worst surface in this theme, measured by scripts/check-contrast.mjs.",
+  "color": {
+    "$type": "color",
+    "bg-primary": {
+      "$value": "{color.ink-base}"
+    },
+    "bg-surface": {
+      "$value": "{color.ink-surface}"
+    },
+    "bg-elevated": {
+      "$value": "{color.ink-elevated}"
+    },
+    "bg-deep": {
+      "$value": "{color.ink-deep}"
+    },
+    "bg-overlay": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.0392,
+          0.0588,
+          0.0627
+        ],
+        "hex": "#0a0f10",
+        "alpha": 0.92
+      },
+      "$description": "modal scrim"
+    },
+    "bg-card": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0,
+          0,
+          0
+        ],
+        "hex": "#000000",
+        "alpha": 0.35
+      },
+      "$description": "card wash over the surface beneath it"
+    },
+    "text-primary": {
+      "$value": "{color.white}"
+    },
+    "text-secondary": {
+      "$value": "{color.slate-100}"
+    },
+    "text-muted": {
+      "$value": "{color.slate-400}"
+    },
+    "text-subtle": {
+      "$value": "{color.slate-500}"
+    },
+    "text-disabled": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.2157,
+          0.2549,
+          0.3176
+        ],
+        "hex": "#374151"
+      },
+      "$description": "inactive control — exempt from 1.4.3 by design"
+    },
+    "brand-green": {
+      "$value": "{color.green-neon}"
+    },
+    "brand-green-hover": {
+      "$value": "{color.green-neon-hover}"
+    },
+    "brand-green-active": {
+      "$value": "{color.green-neon-active}"
+    },
+    "brand-green-muted": {
+      "$value": "{color.green-mid}"
+    },
+    "brand-green-subtle": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0,
+          1,
+          0.6824
+        ],
+        "hex": "#00ffae",
+        "alpha": 0.08
+      },
+      "$description": "brand tint for a filled surface"
+    },
+    "brand-green-glow": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0,
+          1,
+          0.6824
+        ],
+        "hex": "#00ffae",
+        "alpha": 0.4
+      },
+      "$description": "glow/shadow only — conveys no information"
+    },
+    "brand-amber": {
+      "$value": "{color.amber-bright}"
+    },
+    "brand-amber-hover": {
+      "$value": "{color.amber-bright-hover}"
+    },
+    "brand-amber-subtle": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.9608,
+          0.6196,
+          0.0431
+        ],
+        "hex": "#f59e0b",
+        "alpha": 0.08
+      },
+      "$description": "amber tint"
+    },
+    "border-default": {
+      "$value": "{color.ink-border}"
+    },
+    "border-subtle": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          1,
+          1
+        ],
+        "hex": "#ffffff",
+        "alpha": 0.04
+      },
+      "$description": "hairline"
+    },
+    "border-strong": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          1,
+          1
+        ],
+        "hex": "#ffffff",
+        "alpha": 0.16
+      },
+      "$description": "perceivable boundary — 1.4.11"
+    },
+    "border-brand": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0,
+          1,
+          0.6824
+        ],
+        "hex": "#00ffae",
+        "alpha": 0.3
+      },
+      "$description": "branded boundary"
+    },
+    "focus-ring": {
+      "$value": "{color.green-neon}",
+      "$description": "never remove; 2px at 2px offset on keyboard focus"
+    },
+    "color-success": {
+      "$value": "{color.green-neon}"
+    },
+    "color-error": {
+      "$value": "{color.red-bright}"
+    },
+    "color-warning": {
+      "$value": "{color.amber-bright}"
+    },
+    "color-info": {
+      "$value": "{color.sky-bright}"
+    },
+    "accent-violet": {
+      "$value": "{color.violet-bright}"
+    },
+    "accent-sky": {
+      "$value": "{color.sky-bright}"
+    },
+    "accent-teal": {
+      "$value": "{color.teal-bright}"
+    },
+    "accent-rose": {
+      "$value": "{color.rose-bright}"
+    },
+    "accent-amber": {
+      "$value": "{color.amber-bright}"
+    },
+    "accent-orange": {
+      "$value": "{color.orange-bright}"
+    }
+  }
+}

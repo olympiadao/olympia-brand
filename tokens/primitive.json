@@ -1,0 +1,560 @@
+{
+  "$description": "Olympia primitive tokens. Raw values with no theme dependency. Never reference these from a component — use a role token from semantic.{dark,light}.json. Every value carries the contrast ratio it was validated at; re-measure with scripts/check-contrast.mjs after any edit.",
+  "color": {
+    "$type": "color",
+    "green-neon": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0,
+          1,
+          0.6824
+        ],
+        "hex": "#00ffae"
+      },
+      "$description": "primary brand green, dark theme — 13.46:1 on ink-elevated"
+    },
+    "green-neon-hover": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.0784,
+          0.9451,
+          0.7059
+        ],
+        "hex": "#14f1b4"
+      },
+      "$description": "dark theme hover — 12.07:1"
+    },
+    "green-neon-active": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0,
+          0.8,
+          0.5412
+        ],
+        "hex": "#00cc8a"
+      },
+      "$description": "dark theme active — 8.46:1"
+    },
+    "green-mid": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.1765,
+          0.5725,
+          0.4157
+        ],
+        "hex": "#2d926a"
+      },
+      "$description": "dark theme muted/secondary green — 4.59:1"
+    },
+    "green-deep": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0,
+          0.4784,
+          0.3255
+        ],
+        "hex": "#007a53"
+      },
+      "$description": "primary brand green, light theme — 4.75:1 on paper-deep"
+    },
+    "green-deep-hover": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0,
+          0.4,
+          0.2667
+        ],
+        "hex": "#006644"
+      },
+      "$description": "light theme hover — 6.22:1"
+    },
+    "green-deep-active": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0,
+          0.3216,
+          0.2196
+        ],
+        "hex": "#005238"
+      },
+      "$description": "light theme active — 8.20:1"
+    },
+    "green-deepest": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0,
+          0.302,
+          0.1882
+        ],
+        "hex": "#004d30"
+      },
+      "$description": "light theme muted/secondary green — 8.82:1"
+    },
+    "amber-bright": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.9608,
+          0.6196,
+          0.0431
+        ],
+        "hex": "#f59e0b"
+      },
+      "$description": "treasury amber, dark theme — 8.27:1"
+    },
+    "amber-bright-hover": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.9843,
+          0.749,
+          0.1412
+        ],
+        "hex": "#fbbf24"
+      },
+      "$description": "dark theme hover — 10.64:1"
+    },
+    "amber-deep": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.5725,
+          0.251,
+          0.0549
+        ],
+        "hex": "#92400e"
+      },
+      "$description": "treasury amber, light theme — 6.27:1"
+    },
+    "amber-deep-hover": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.4863,
+          0.2,
+          0.0314
+        ],
+        "hex": "#7c3308"
+      },
+      "$description": "light theme hover — 7.95:1"
+    },
+    "ink-base": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.0392,
+          0.0588,
+          0.0627
+        ],
+        "hex": "#0a0f10"
+      },
+      "$description": "dark page background"
+    },
+    "ink-surface": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.0667,
+          0.0667,
+          0.0667
+        ],
+        "hex": "#111111"
+      },
+      "$description": "dark raised surface"
+    },
+    "ink-elevated": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.0941,
+          0.0941,
+          0.0941
+        ],
+        "hex": "#181818"
+      },
+      "$description": "dark elevated surface — the WORST dark surface, so every dark token is measured here"
+    },
+    "ink-deep": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.0314,
+          0.0431,
+          0.0471
+        ],
+        "hex": "#080b0c"
+      },
+      "$description": "dark recessed surface"
+    },
+    "ink-border": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.102,
+          0.102,
+          0.102
+        ],
+        "hex": "#1a1a1a"
+      },
+      "$description": "dark hairline border"
+    },
+    "paper-base": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.9725,
+          0.9804,
+          0.9765
+        ],
+        "hex": "#f8faf9"
+      },
+      "$description": "light page background"
+    },
+    "paper-surface": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          1,
+          1
+        ],
+        "hex": "#ffffff"
+      },
+      "$description": "light raised surface"
+    },
+    "paper-elevated": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.9451,
+          0.9608,
+          0.9529
+        ],
+        "hex": "#f1f5f3"
+      },
+      "$description": "light elevated surface"
+    },
+    "paper-deep": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.9294,
+          0.949,
+          0.9412
+        ],
+        "hex": "#edf2f0"
+      },
+      "$description": "light recessed surface — the WORST light surface, so every light token is measured here"
+    },
+    "paper-border": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.8863,
+          0.9098,
+          0.9412
+        ],
+        "hex": "#e2e8f0"
+      },
+      "$description": "light hairline border"
+    },
+    "white": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          1,
+          1
+        ],
+        "hex": "#ffffff"
+      },
+      "$description": "dark theme primary text — 17.76:1"
+    },
+    "slate-100": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.7647,
+          0.7725,
+          0.7961
+        ],
+        "hex": "#c3c5cb"
+      },
+      "$description": "dark theme secondary text — 10.29:1"
+    },
+    "slate-400": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.6118,
+          0.6392,
+          0.6863
+        ],
+        "hex": "#9ca3af"
+      },
+      "$description": "dark theme muted text — 6.99:1"
+    },
+    "slate-500": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.5451,
+          0.5765,
+          0.6314
+        ],
+        "hex": "#8b93a1"
+      },
+      "$description": "dark theme subtle text — 5.74:1"
+    },
+    "slate-550": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.4,
+          0.4275,
+          0.4784
+        ],
+        "hex": "#666d7a"
+      },
+      "$description": "light theme subtle text — 4.60:1, the tightest passing token in the palette"
+    },
+    "slate-600": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.3725,
+          0.4,
+          0.451
+        ],
+        "hex": "#5f6673"
+      },
+      "$description": "light theme muted text — 5.11:1"
+    },
+    "slate-700": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.2157,
+          0.2549,
+          0.3176
+        ],
+        "hex": "#374151"
+      },
+      "$description": "light theme secondary text — 9.11:1"
+    },
+    "near-black": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.0392,
+          0.0588,
+          0.0627
+        ],
+        "hex": "#0a0f10"
+      },
+      "$description": "light theme primary text — 17.05:1"
+    },
+    "red-bright": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.9373,
+          0.2667,
+          0.2667
+        ],
+        "hex": "#ef4444"
+      },
+      "$description": "dark theme error — 4.72:1"
+    },
+    "red-deep": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.7255,
+          0.1098,
+          0.1098
+        ],
+        "hex": "#b91c1c"
+      },
+      "$description": "light theme error — 5.72:1"
+    },
+    "sky-bright": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.2196,
+          0.7412,
+          0.9725
+        ],
+        "hex": "#38bdf8"
+      },
+      "$description": "dark theme info — 8.29:1"
+    },
+    "sky-deep": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.0078,
+          0.4078,
+          0.6275
+        ],
+        "hex": "#0268a0"
+      },
+      "$description": "light theme info — 5.32:1 on page, 4.62:1 on its own 10% tint"
+    },
+    "violet-bright": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.6549,
+          0.5451,
+          0.9804
+        ],
+        "hex": "#a78bfa"
+      },
+      "$description": "dark accent — 6.52:1 on page, 5.63:1 on own tint"
+    },
+    "violet-deep": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.4275,
+          0.1569,
+          0.851
+        ],
+        "hex": "#6d28d9"
+      },
+      "$description": "light accent — 6.28:1 on page, 5.36:1 on own tint"
+    },
+    "teal-bright": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0,
+          0.8353,
+          0.7451
+        ],
+        "hex": "#00d5be"
+      },
+      "$description": "dark accent — 9.52:1 on page, 7.99:1 on own tint"
+    },
+    "teal-deep": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0,
+          0.4353,
+          0.4039
+        ],
+        "hex": "#006f67"
+      },
+      "$description": "light accent — 5.35:1 on page, 4.65:1 on own tint"
+    },
+    "rose-bright": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          0.6314,
+          0.6784
+        ],
+        "hex": "#ffa1ad"
+      },
+      "$description": "dark accent — 9.26:1 on page, 7.69:1 on own tint"
+    },
+    "rose-deep": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.7647,
+          0,
+          0.2
+        ],
+        "hex": "#c30033"
+      },
+      "$description": "light accent — 5.51:1 on page, 4.61:1 on own tint"
+    },
+    "orange-bright": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.9765,
+          0.451,
+          0.0863
+        ],
+        "hex": "#f97316"
+      },
+      "$description": "dark accent — 6.33:1 on page, 5.55:1 on own tint"
+    },
+    "orange-deep": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.7098,
+          0.2039,
+          0
+        ],
+        "hex": "#b53400"
+      },
+      "$description": "light accent — 5.37:1 on page, 4.62:1 on own tint"
+    }
+  },
+  "font": {
+    "$type": "fontFamily",
+    "sans": {
+      "$value": [
+        "Inter",
+        "system-ui",
+        "-apple-system",
+        "sans-serif"
+      ],
+      "$description": "headings and body"
+    },
+    "mono": {
+      "$value": [
+        "JetBrains Mono",
+        "ui-monospace",
+        "SFMono-Regular",
+        "monospace"
+      ],
+      "$description": "code, hashes and addresses"
+    }
+  },
+  "radius": {
+    "$type": "dimension",
+    "sm": {
+      "$value": {
+        "value": 6,
+        "unit": "px"
+      }
+    },
+    "md": {
+      "$value": {
+        "value": 10,
+        "unit": "px"
+      }
+    },
+    "lg": {
+      "$value": {
+        "value": 14,
+        "unit": "px"
+      },
+      "$description": "cards"
+    },
+    "pill": {
+      "$value": {
+        "value": 999,
+        "unit": "px"
+      },
+      "$description": "badges, pills and chips"
+    }
+  }
+}

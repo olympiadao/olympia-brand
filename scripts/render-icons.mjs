@@ -252,6 +252,60 @@ ${mark.body}
   }
 }
 
+// ── maskable safe zone ──────────────────────────────────────────────────────
+//
+// Android may crop a maskable icon to any shape inside the square, and only the
+// centre 80% circle is guaranteed — so the MARK must sit inside a radius of 40%
+// of the width.
+//
+// MEASURE THE MARK, NOT THE TILE. That distinction is the whole check, and
+// getting it wrong is what produced a false "this will clip" report against a
+// tile whose mark was comfortably inside the circle: measuring every non-plate
+// pixel counts the plate's own antialiased edge and reaches ~62% of the width on
+// any full-bleed tile, which says nothing about the mark. Isolating the mark
+// first — make the plate transparent, then trim — is what makes the number mean
+// something. The bbox corner is an upper bound on the true radius, which errs
+// toward reporting a clip that is not there rather than missing one that is.
+function markRadius(file) {
+  const geo = execFileSync(
+    'convert',
+    [file, '-background', PLATE, '-flatten', '-fuzz', '2%', '-transparent', PLATE, '-trim', '-format', '%wx%h%O', 'info:'],
+    { encoding: 'utf8' },
+  ).trim();
+  const m = /^(\d+)x(\d+)([+-]\d+)([+-]\d+)/.exec(geo);
+  if (!m) return null;
+  const [w, h, x, y] = [+m[1], +m[2], +m[3], +m[4]];
+  const size = Number(execFileSync('identify', ['-format', '%w', file], { encoding: 'utf8' }));
+  const c = (size - 1) / 2;
+  const corners = [[x, y], [x + w - 1, y], [x, y + h - 1], [x + w - 1, y + h - 1]];
+  return { r: Math.max(...corners.map(([a, b]) => Math.hypot(a - c, b - c))), safe: size * 0.4, geo };
+}
+
+if (CHECK) {
+  console.log('\n  maskable safe zone — the MARK must fit the centre 80% circle');
+  for (const [key, pkg] of Object.entries(PACKAGES)) {
+    if (only && only !== key) continue;
+    const f = join(root, pkg.dir, 'icon-maskable-512.png');
+    const m = markRadius(f);
+    const ok = m && m.r <= m.safe;
+    if (!ok) differs++;
+    console.log(`    ${ok ? 'ok      ' : 'FAIL    '}${pkg.dir}/icon-maskable-512.png  mark r<=${m.r.toFixed(0)}px, safe ${m.safe.toFixed(0)}px`);
+  }
+  // Control: the ordinary tile is drawn at a LARGER inset, so its mark must
+  // measure larger than the maskable one. If the two ever match, the maskable
+  // file is not actually being inset and this check is measuring nothing.
+  for (const [key, pkg] of Object.entries(PACKAGES)) {
+    if (only && only !== key) continue;
+    const any = markRadius(join(root, pkg.dir, 'android-chrome-512x512.png'));
+    const msk = markRadius(join(root, pkg.dir, 'icon-maskable-512.png'));
+    const discriminates = any && msk && any.r > msk.r;
+    if (!discriminates) differs++;
+    console.log(
+      `    ${discriminates ? 'ok      ' : 'FAIL    '}control: ${pkg.dir} any-tile mark r<=${any.r.toFixed(0)}px > maskable r<=${msk.r.toFixed(0)}px`,
+    );
+  }
+}
+
 console.log('');
 if (CHECK) {
   console.log(

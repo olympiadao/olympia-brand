@@ -73,11 +73,11 @@
 
   <!-- Subtitle -->
   <text x="88" y="330" font-family="Inter, sans-serif" font-size="25" font-weight="400"
-        fill="#c3c5cb">Protocol-Funded Vault for Ethereum Classic</text>
+        fill="#c3c5cb">Sovereignty Vault for Ethereum Classic</text>
 
   <!-- Note -->
   <text x="88" y="380" font-family="Inter, sans-serif" font-size="17" font-weight="400"
-        fill="#9ca3af">Live monitoring of the protocol vault. Transaction fee revenue funds the treasury.</text>
+        fill="#9ca3af">Live monitoring of the core development vault. Base fee revenue funds the treasury.</text>
 
   <!-- Chips -->
   <g transform="translate(88 430)"><rect x="0" y="0" width="97" height="38" rx="19" fill="none" stroke="#00ffae" stroke-opacity="0.35"/><circle cx="17" cy="19" r="3" fill="#00ffae" fill-opacity="0.9"/><text x="28" y="24" font-family="JetBrains Mono, monospace" font-size="14" letter-spacing="0.02em" fill="#c3c5cb">Balance</text></g><g transform="translate(197 430)"><rect x="0" y="0" width="142" height="38" rx="19" fill="none" stroke="#00ffae" stroke-opacity="0.35"/><circle cx="17" cy="19" r="3" fill="#00ffae" fill-opacity="0.9"/><text x="28" y="24" font-family="JetBrains Mono, monospace" font-size="14" letter-spacing="0.02em" fill="#c3c5cb">Transactions</text></g><g transform="translate(351 430)"><rect x="0" y="0" width="124" height="38" rx="19" fill="none" stroke="#00ffae" stroke-opacity="0.35"/><circle cx="17" cy="19" r="3" fill="#00ffae" fill-opacity="0.9"/><text x="28" y="24" font-family="JetBrains Mono, monospace" font-size="14" letter-spacing="0.02em" fill="#c3c5cb">Governance</text></g><g transform="translate(487 430)"><rect x="0" y="0" width="115" height="38" rx="19" fill="none" stroke="#00ffae" stroke-opacity="0.35"/><circle cx="17" cy="19" r="3" fill="#00ffae" fill-opacity="0.9"/><text x="28" y="24" font-family="JetBrains Mono, monospace" font-size="14" letter-spacing="0.02em" fill="#c3c5cb">Live Data</text></g>

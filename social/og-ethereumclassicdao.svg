@@ -62,7 +62,7 @@
 
   <!-- Eyebrow -->
   <text x="88" y="152" font-family="JetBrains Mono, monospace" font-size="15"
-        letter-spacing="0.22em" fill="#00ffae" fill-opacity="0.9">ETHEREUM CLASSIC DAO</text>
+        letter-spacing="0.22em" fill="#00ffae" fill-opacity="0.9">ETHEREUM CLASSIC DAO LLC</text>
 
   <!-- Title -->
   <text x="88" y="240" font-family="Inter, sans-serif" font-size="58" font-weight="700"
@@ -73,14 +73,14 @@
 
   <!-- Subtitle -->
   <text x="88" y="330" font-family="Inter, sans-serif" font-size="25" font-weight="400"
-        fill="#c3c5cb">Building Software &amp; Infrastructure for Global Adoption</text>
+        fill="#c3c5cb">Building Software &amp; Infrastructure for Global Finance</text>
 
   <!-- Note -->
   <text x="88" y="380" font-family="Inter, sans-serif" font-size="17" font-weight="400"
-        fill="#9ca3af">Wyoming DAO LLC — the largest Proof-of-Work smart contract platform.</text>
+        fill="#9ca3af">The bridge between decentralized code and traditional legal systems.</text>
 
   <!-- Chips -->
-  <g transform="translate(88 430)"><rect x="0" y="0" width="142" height="38" rx="19" fill="none" stroke="#00ffae" stroke-opacity="0.35"/><circle cx="17" cy="19" r="3" fill="#00ffae" fill-opacity="0.9"/><text x="28" y="24" font-family="JetBrains Mono, monospace" font-size="14" letter-spacing="0.02em" fill="#c3c5cb">Core Clients</text></g><g transform="translate(242 430)"><rect x="0" y="0" width="160" height="38" rx="19" fill="none" stroke="#00ffae" stroke-opacity="0.35"/><circle cx="17" cy="19" r="3" fill="#00ffae" fill-opacity="0.9"/><text x="28" y="24" font-family="JetBrains Mono, monospace" font-size="14" letter-spacing="0.02em" fill="#c3c5cb">Infrastructure</text></g><g transform="translate(414 430)"><rect x="0" y="0" width="106" height="38" rx="19" fill="none" stroke="#00ffae" stroke-opacity="0.35"/><circle cx="17" cy="19" r="3" fill="#00ffae" fill-opacity="0.9"/><text x="28" y="24" font-family="JetBrains Mono, monospace" font-size="14" letter-spacing="0.02em" fill="#c3c5cb">Hashrate</text></g><g transform="translate(532 430)"><rect x="0" y="0" width="124" height="38" rx="19" fill="none" stroke="#00ffae" stroke-opacity="0.35"/><circle cx="17" cy="19" r="3" fill="#00ffae" fill-opacity="0.9"/><text x="28" y="24" font-family="JetBrains Mono, monospace" font-size="14" letter-spacing="0.02em" fill="#c3c5cb">Compliance</text></g>
+  <g transform="translate(88 430)"><rect x="0" y="0" width="142" height="38" rx="19" fill="none" stroke="#00ffae" stroke-opacity="0.35"/><circle cx="17" cy="19" r="3" fill="#00ffae" fill-opacity="0.9"/><text x="28" y="24" font-family="JetBrains Mono, monospace" font-size="14" letter-spacing="0.02em" fill="#c3c5cb">Core Clients</text></g><g transform="translate(242 430)"><rect x="0" y="0" width="160" height="38" rx="19" fill="none" stroke="#00ffae" stroke-opacity="0.35"/><circle cx="17" cy="19" r="3" fill="#00ffae" fill-opacity="0.9"/><text x="28" y="24" font-family="JetBrains Mono, monospace" font-size="14" letter-spacing="0.02em" fill="#c3c5cb">Infrastructure</text></g><g transform="translate(414 430)"><rect x="0" y="0" width="106" height="38" rx="19" fill="none" stroke="#00ffae" stroke-opacity="0.35"/><circle cx="17" cy="19" r="3" fill="#00ffae" fill-opacity="0.9"/><text x="28" y="24" font-family="JetBrains Mono, monospace" font-size="14" letter-spacing="0.02em" fill="#c3c5cb">Security</text></g><g transform="translate(532 430)"><rect x="0" y="0" width="124" height="38" rx="19" fill="none" stroke="#00ffae" stroke-opacity="0.35"/><circle cx="17" cy="19" r="3" fill="#00ffae" fill-opacity="0.9"/><text x="28" y="24" font-family="JetBrains Mono, monospace" font-size="14" letter-spacing="0.02em" fill="#c3c5cb">Compliance</text></g>
 
   <!-- Footer -->
   <text x="88" y="600" font-family="JetBrains Mono, monospace" font-size="14"

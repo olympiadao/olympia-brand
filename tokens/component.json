@@ -1,0 +1,160 @@
+{
+  "$description": "Olympia component tokens. Says which role token each part of a badge, pill, chip, button, card or focus ring reads, per variant and state. Read this before designing anything. It carries NO density — padding, height and gap are each product's call, because a marketing site and a dApp table need different ones. Every variant is exhaustive by construction: a status value with no variant here has no color, which is the point. A call-site ternary or string equality on a status name silently gives every new value the else-branch's color; this map cannot, because adding a value means adding a row.",
+  "focus": {
+    "$description": "Non-negotiable. Every interactive element on every surface gets a visible keyboard-focus indicator. WCAG 2.1 SC 2.4.7 and 1.4.11 — the ring is a non-text element and needs 3:1 against what it sits on.",
+    "color": { "$value": "{color.focus-ring}" },
+    "width": { "$value": { "value": 2, "unit": "px" } },
+    "offset": { "$value": { "value": 2, "unit": "px" } },
+    "style": { "$value": "solid" }
+  },
+  "selection": {
+    "background": { "$value": "{color.brand-green-subtle}" },
+    "text": { "$value": "{color.text-primary}" }
+  },
+  "badge": {
+    "$description": "A non-interactive status label. Tinted background, no border, pill radius. The text color IS the accent; the background is that same accent at 10% over the surface — which is why each accent was solved against its own tint rather than against the page.",
+    "requires-label": {
+      "$value": true,
+      "$description": "HARD REQUIREMENT, WCAG 2.1 SC 1.4.1. A badge always renders its status as TEXT; the color is redundant reinforcement and never the carrier. This is not a style preference — it is the only thing that makes these variants distinguishable to a color-blind reader. Measured with scripts/check-contrast.mjs: under deuteranopia and protanopia, which affect about 1 in 12 men, several of these variants lose over 90% of their chromatic separation from one another. In light mode the error/warning pair retains 6% of its hue difference and almost no lightness difference. No choice of colors fixes that while brand green and treasury amber stay where they are, so the label is the fix. A bare colored dot, a color-only legend, or an icon with no accessible name is a conformance failure, not a design choice."
+    },
+    "font": { "$value": "{font.mono}" },
+    "radius": { "$value": "{radius.pill}" },
+    "weight": { "$value": 500 },
+    "tracking": { "$value": 0.02 },
+    "tint-alpha": {
+      "$value": 0.1,
+      "$description": "Changing this invalidates every measured badge ratio. Re-run scripts/check-contrast.mjs if you do."
+    },
+    "variant": {
+      "$description": "Meaning first, hue second. The house convention is: violet = Ethereum upgrade tracks, green = ETC-native, gray = maintenance or neutral, amber = treasury surfaces only.",
+      "neutral": {
+        "$description": "Maintenance, unknown, or no status. The default — never leave a value uncolored, give it this.",
+        "text": { "$value": "{color.text-muted}" },
+        "background": { "$value": "{color.border-subtle}" }
+      },
+      "brand": {
+        "$description": "ETC-native. The green is the brand, so this is the strongest positive signal available.",
+        "text": { "$value": "{color.brand-green}" },
+        "background": { "$value": "{color.brand-green-subtle}" }
+      },
+      "treasury": {
+        "$description": "Treasury and financial data. RESERVED — amber appears on treasury surfaces and nowhere else. Do not use it as a general warning; --color-warning is its own token.",
+        "text": { "$value": "{color.brand-amber}" },
+        "background": { "$value": "{color.brand-amber-subtle}" }
+      },
+      "upgrade": {
+        "$description": "Ethereum upgrade tracks.",
+        "text": { "$value": "{color.accent-violet}" },
+        "background": { "$value": "{color.accent-violet}", "$extensions": { "alpha": 0.1 } }
+      },
+      "governance": {
+        "$description": "Governance and voting.",
+        "text": { "$value": "{color.accent-teal}" },
+        "background": { "$value": "{color.accent-teal}", "$extensions": { "alpha": 0.1 } }
+      },
+      "signaling": {
+        "$description": "Signaling and advisory, where the outcome is not binding.",
+        "text": { "$value": "{color.accent-rose}" },
+        "background": { "$value": "{color.accent-rose}", "$extensions": { "alpha": 0.1 } }
+      },
+      "deprecated": {
+        "$description": "Deprecated, superseded, or negative status.",
+        "text": { "$value": "{color.accent-orange}" },
+        "background": { "$value": "{color.accent-orange}", "$extensions": { "alpha": 0.1 } }
+      },
+      "draft": {
+        "$description": "Draft, proposed, not yet live.",
+        "text": { "$value": "{color.accent-sky}" },
+        "background": { "$value": "{color.accent-sky}", "$extensions": { "alpha": 0.1 } }
+      }
+    }
+  },
+  "pill": {
+    "$description": "A bordered label, usually carrying a count or a filter. Same radius as a badge, but a visible boundary instead of a tint — so the BORDER is the thing that must clear 3:1 (SC 1.4.11), not just the text.",
+    "font": { "$value": "{font.mono}" },
+    "radius": { "$value": "{radius.pill}" },
+    "weight": { "$value": 500 },
+    "background": { "$value": "{color.bg-surface}" },
+    "text": { "$value": "{color.text-secondary}" },
+    "border": { "$value": "{color.border-strong}" },
+    "state": {
+      "hover": {
+        "text": { "$value": "{color.text-primary}" },
+        "border": { "$value": "{color.border-brand}" }
+      },
+      "selected": {
+        "text": { "$value": "{color.brand-green}" },
+        "background": { "$value": "{color.brand-green-subtle}" },
+        "border": { "$value": "{color.border-brand}" }
+      },
+      "disabled": {
+        "$description": "Exempt from 1.4.3 by SC exception, but keep the border perceivable so the control's shape still reads.",
+        "text": { "$value": "{color.text-disabled}" },
+        "border": { "$value": "{color.border-subtle}" }
+      }
+    }
+  },
+  "chip": {
+    "$description": "Interactive and dismissible — a selected filter, a tag on an input. Unlike a badge it takes focus, so it carries the focus ring and every state below.",
+    "font": { "$value": "{font.sans}" },
+    "radius": { "$value": "{radius.pill}" },
+    "weight": { "$value": 500 },
+    "background": { "$value": "{color.bg-elevated}" },
+    "text": { "$value": "{color.text-secondary}" },
+    "border": { "$value": "{color.border-default}" },
+    "dismiss": {
+      "$description": "The x. It is a graphical object and needs 3:1, and it needs a non-color affordance — an accessible name — because its meaning is carried by shape alone.",
+      "color": { "$value": "{color.text-muted}" },
+      "hover": { "$value": "{color.text-primary}" }
+    },
+    "state": {
+      "hover": {
+        "background": { "$value": "{color.bg-surface}" },
+        "border": { "$value": "{color.border-strong}" }
+      },
+      "selected": {
+        "text": { "$value": "{color.brand-green}" },
+        "background": { "$value": "{color.brand-green-subtle}" },
+        "border": { "$value": "{color.border-brand}" }
+      },
+      "focus": { "$value": "{focus.color}" },
+      "disabled": {
+        "text": { "$value": "{color.text-disabled}" },
+        "border": { "$value": "{color.border-subtle}" }
+      }
+    }
+  },
+  "button": {
+    "font": { "$value": "{font.sans}" },
+    "radius": { "$value": "{radius.md}" },
+    "weight": { "$value": 600 },
+    "primary": {
+      "$description": "The label sits on the brand green, so it is measured against THAT, not against the page. bg-primary is the right label because it inverts with the theme, and the two themes need OPPOSITE labels: on dark-theme #00ffae a near-black label measures 14.62:1 while white measures 1.32:1, and on light-theme #007a53 it reverses — near-white 5.13:1, near-black 3.59:1. Measured across base/hover/active in both themes: 5.13 to 14.62:1, all passing. Do not hardcode a white label.",
+      "background": { "$value": "{color.brand-green}" },
+      "text": { "$value": "{color.bg-primary}" },
+      "hover": { "$value": "{color.brand-green-hover}" },
+      "active": { "$value": "{color.brand-green-active}" }
+    },
+    "secondary": {
+      "background": { "$value": "{color.bg-elevated}" },
+      "text": { "$value": "{color.text-primary}" },
+      "border": { "$value": "{color.border-strong}" }
+    },
+    "ghost": {
+      "text": { "$value": "{color.brand-green}" },
+      "hover": { "$value": "{color.brand-green-subtle}" }
+    },
+    "disabled": {
+      "background": { "$value": "{color.border-subtle}" },
+      "text": { "$value": "{color.text-disabled}" }
+    }
+  },
+  "card": {
+    "background": { "$value": "{color.bg-card}" },
+    "border": { "$value": "{color.border-default}" },
+    "radius": { "$value": "{radius.lg}" },
+    "hover": {
+      "border": { "$value": "{color.border-brand}" }
+    }
+  }
+}

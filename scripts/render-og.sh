@@ -129,16 +129,19 @@ for svg in "${sources[@]}"; do
   # weight — every pixel is opaque. Dropping it is lossless here and takes ~10%
   # off the file.
   #
-  # Then quantise to a 256-colour palette. The card is a near-black ground, one
-  # accent and white type, so it uses about 5,600 distinct colours almost all of
-  # which are gradient steps in the reticle glow. Measured: 534 KB -> 137 KB, a
-  # 74% reduction at RMSE 0.005 (0.5%), which is not perceptible on the artwork
-  # and was checked by eye on the glow, where banding would show first.
+  convert "$out" -alpha off -define png:compression-level=9 "$out"
+
+  # NOT quantised, and that is a decision rather than an oversight. Remapping the
+  # cards onto a 256-colour palette takes each from ~534 KB to ~112 KB at RMSE
+  # 0.005, which is not perceptible on this artwork. It was implemented, measured,
+  # and reverted: ImageMagick's palette encoder is not byte-reproducible even with
+  # a fixed committed palette, -dither None, -strip and the tIME chunk excluded.
+  # Two runs produce PIXEL-identical, BYTE-different files, which reads as "the
+  # source changed" and defeats --check.
   #
-  # This matters for reach rather than for tidiness. A scraper fetches the card
-  # to build a link preview, and some give up on a slow fetch; a smaller file is
-  # more likely to render at all.
-  convert "$out" -alpha off -colors 256 -define png:compression-level=9 "$out"
+  # The size win is real but small in consequence — every platform accepts 534 KB
+  # comfortably — and it is not worth trading a working reproducibility gate for.
+  # Revisit only with an encoder that is deterministic by construction.
 
   if [ "$CHECK" = 1 ]; then
     committed="$SOCIAL/$base.png"
